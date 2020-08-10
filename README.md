@@ -12,5 +12,5 @@ Yep! Its as simple as that.
 ## About The Author
 <br>
 Check out the author on 
--[Telegram](https://www.instagram.com/nolimith3ndrix) and 
--[Twitter](https://www.twitter.com/nolimithendrix).
+- [Telegram](https://www.instagram.com/nolimith3ndrix) and 
+- [Twitter](https://www.twitter.com/nolimithendrix).
