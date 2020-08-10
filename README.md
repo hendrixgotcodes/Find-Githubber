@@ -3,7 +3,7 @@
 <br>
 To use this online app;
 <br>
-- [Visit Find Githubber](https://github.com/hendrixgotcodes/Find-Githubber)
+- [Visit Find Githubber](https://hendrixgotcodes.github.io/Find-Githubber/)
 - Type in the username of the account you want to see
 <br>
 Yep! Its as simple as that.
