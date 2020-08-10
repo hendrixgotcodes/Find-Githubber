@@ -1,5 +1,6 @@
 # Find-Githubber
 ##About Find Githubber
+<br>
 **Find Githubber** is an onine search engine for searching valid github users. **Find Githubber** upon query returns the public repos together with extra user information.
 <br>
 ##Usage
