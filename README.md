@@ -8,7 +8,7 @@ To use this online app;
 - Type in the username of the account you want to see
 Yep! Its as simple as that.
 <br>
-## About The Author
+### About The Author
 Check out the author on: 
 - [Instagram](https://www.instagram.com/nolimith3ndrix) and 
 - [Twitter](https://www.twitter.com/nolimithendrix).
