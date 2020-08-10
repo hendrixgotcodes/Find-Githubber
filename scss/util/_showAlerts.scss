@@ -1,0 +1,31 @@
+//Styling alert divs
+.warningAlert,
+.successAlert,
+.infoAlert {
+    width: 100%;
+    // height: 0rem;
+    // padding: 1.5rem 1rem;
+    text-align: center;
+    opacity: 0;
+    transition: .5s;
+}
+
+.warningAlertShown,
+.successAlertShown,
+.infoAlertShown {
+    // width: 100%;
+    // height: 3rem;
+    padding: 1.5rem;
+    // text-align: center;
+    opacity: 1;
+    // transition: .5s;
+    font-size: 1rem;
+}
+
+.warningAlert {
+    background-color: red;
+}
+
+.infoAlert {
+    background-color: yellow;
+}

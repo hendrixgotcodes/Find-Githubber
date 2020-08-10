@@ -44,7 +44,7 @@
         color: $primary_label;
     }
 
-    &:focus{
+    &:focus {
         // outline-color: rgba($color: $secondary_color, $alpha: 0.2);
         // outline-width: 2rem;
         outline: none;
@@ -200,5 +200,11 @@
 
 //Importing Footer
 @import './components/footer';
+
+
+// Importing Utilities
+@import "./util/showAlerts";
+
+
 @import "./util/onlineOfllineCard";
 @import "./mediaQueries/responsiveness";

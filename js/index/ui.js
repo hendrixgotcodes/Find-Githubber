@@ -1,10 +1,21 @@
+/**THIS UI CLASS IS A PROTOTYPE WHICH CONTAINS
+SEVERAL METHODS FOR UPDATING THE DOM
+**/
 class UI {
   constructor() {
-    this.profile_container = document.querySelector('.profile_container');
+    //Creating DOM Elements
     this.profile = document.createElement('div');
     this.profile.className = "profile";
+
+    //GETTING DOM ELEMENTS
+    this.profile_container = document.querySelector('.profile_container');
+    this.page = document.querySelector('.indexPage');
+    this.body = document.querySelector('.body');
   }
 
+  /** Function updates the DOM with github users based on user 
+  inputs 
+**/
   setProfile(data) {
 
     console.log(data);
@@ -80,7 +91,9 @@ class UI {
 
   }
 
-  clearProfile() {
+  //Function to be called when user is not found
+  profileNotFound() {
+    this.showAlert("infoAlert", "Sorry. User Not Found!");
     this.profile_container.innerHTML = `<img class="img" src="./img/error.png" alt="Sorry an error ocuured">`;
   }
 
@@ -117,7 +130,7 @@ class UI {
 
     setTimeout(() => {
       document.body.removeChild(warn);
-    }, 5000)
+    }, 3000)
   }
 
   checkOnlineAvailabilty() {
@@ -125,6 +138,38 @@ class UI {
       this.setAlert("online");
     } else {
       this.setAlert("offline");
+    }
+  }
+
+  showAlert(alertType, textContent) {
+
+    this.clearAlert(alertType);
+
+    const alert = document.createElement("div");
+    alert.className = alertType;
+
+    this.page.insertBefore(alert, this.body);
+
+    // TimeOut to change the class of "alert" after 1 milliseconds, this will create an animation
+    setTimeout(() => {
+      alert.classList.toggle(alertType + "Shown");
+      alert.textContent = textContent;
+    }, 100);
+
+    //Removes "alert" from DOM after 5.1s
+    setTimeout(() => {
+      setTimeout(() => {
+        alert.classList.toggle(alertType);
+      }, 100)
+      this.page.removeChild(alert);
+    }, 3100);
+  }
+
+  //Remove alertBox if any two prevent multiple instances
+  clearAlert(alertType) {
+    const alertBox = document.querySelector("." + alertType);
+    if (alertBox) {
+      alertBox.remove();
     }
   }
 

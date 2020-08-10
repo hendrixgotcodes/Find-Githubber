@@ -224,6 +224,27 @@ h1 {
   .footer_link:hover {
     color: #fcec00; }
 
+.warningAlert,
+.successAlert,
+.infoAlert {
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: .5s; }
+
+.warningAlertShown,
+.successAlertShown,
+.infoAlertShown {
+  padding: 1.5rem;
+  opacity: 1;
+  font-size: 1rem; }
+
+.warningAlert {
+  background-color: red; }
+
+.infoAlert {
+  background-color: yellow; }
+
 .online, .offline {
   width: 15vw;
   height: 10vh;
@@ -264,7 +285,11 @@ h1 {
     .profile_picture a {
       padding: .5rem 1.5rem; }
   .profile_stats h3 {
-    font-size: .8rem; } }
+    font-size: .8rem; }
+  .warningAlertShown,
+  .successAlertShown,
+  .infoAlertShown {
+    padding: 1rem; } }
 
 @media only screen and (max-width: 680px) {
   .navBar_container,
@@ -315,7 +340,12 @@ h1 {
   .footer_links {
     width: 20%; }
   .footer_link {
-    font-size: .8rem; } }
+    font-size: .8rem; }
+  .warningAlertShown,
+  .successAlertShown,
+  .infoAlertShown {
+    font-size: .8rem;
+    padding: .8rem; } }
 
 @media only screen and (max-width: 356px) {
   .navBar_container,
@@ -342,4 +372,9 @@ h1 {
     padding: .7rem; }
   .textBox {
     font-size: .7rem;
+    padding: .5rem; }
+  .warningAlertShown,
+  .successAlertShown,
+  .infoAlertShown {
+    font-size: .5rem;
     padding: .5rem; } }

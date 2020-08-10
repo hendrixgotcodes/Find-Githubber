@@ -14,7 +14,7 @@ searchbox.addEventListener('keyup', (e) => {
         getGithub.getUser(e.target.value)
             .then((data) => {
                 if (data.message === "Not Found" || data.name === undefined || data.name === null) {
-                    ui.clearProfile();
+                    ui.profileNotFound();
                 } else {
                     ui.setProfile(data)
                 }
