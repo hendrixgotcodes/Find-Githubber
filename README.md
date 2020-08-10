@@ -1,11 +1,9 @@
 # Find-Githubber
 ## About Find Githubber
-<br>
 **Find Githubber** is an onine search engine for searching valid github users. **Find Githubber** upon query returns the public repos together with extra user information.
 <br>
-##Usage
+## Usage
 To use this online app;
-<br>
 - [Visit Find Githubber](https://hendrixgotcodes.github.io/Find-Githubber/)
 - Type in the username of the account you want to see
 <br>
