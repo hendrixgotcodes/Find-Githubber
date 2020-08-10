@@ -11,4 +11,6 @@ Yep! Its as simple as that.
 <br>
 ## About The Author
 <br>
-Check out the author on [Telegram](https://www.instagram.com/nolimith3ndrix) and [Twitter](https://www.twitter.com/nolimithendrix).
+Check out the author on 
+-[Telegram](https://www.instagram.com/nolimith3ndrix) and 
+-[Twitter](https://www.twitter.com/nolimithendrix).
