@@ -1,0 +1,69 @@
+//Styling Navigation BAR (.navBar)
+.navBar {
+    background-color: $primary_color;
+}
+
+//Styling Navigation BAR container (.navBar_container)
+.navBar_container {
+    width: 80%;
+    margin: auto;
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+//Styling h1 text in the navBar which appears as logo
+.navBar_header {
+    font-size: 2rem;
+    color: #fff;
+    display: block;
+
+    & span {
+        font-family: $header_font;
+        display: inline-block;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: 2;
+            // display: block;
+            height: 10%;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            background-color: $secondary_color;
+            border-radius: 5px;
+        }
+    }
+}
+
+// Styling link container
+.navBar_links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+    flex-wrap: wrap;
+}
+
+//Styling links
+.navBar_link {
+    text-decoration: none;
+    color: $plain_color;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    transition: color .3s ease;
+    margin-right: 1rem;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:hover {
+        color: $secondary_color;
+    }
+}
