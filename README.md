@@ -8,6 +8,7 @@ To use this online app;
 - Type in the username of the account you want to see
 Yep! Its as simple as that.
 <br>
-## How It Works ##
+## How It Works
+<br>
 **Find Githubber** makes use of a Fetch API (which can instantiated using the windows.fetch object).
 A GET request is made through the Fetch API to the [Github API](https://api.github.com) 
