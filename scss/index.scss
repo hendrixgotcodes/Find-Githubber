@@ -198,6 +198,79 @@
     }
 }
 
+.gitRepos {
+    width: 100%;
+    // background-color: red;
+    margin: 2rem 0;
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    h4{
+        text-decoration: none;
+        text-align: center;
+        margin: 1.5rem auto;
+        cursor: pointer;
+        display: none; 
+    }
+}
+
+.repo {
+    padding: 2rem;
+    border-bottom: 1px solid #eeeeee;
+
+    &:first-child {
+        border-top: 1px solid #cecece;
+    }
+
+    &:nth-child(odd){
+        background-color: rgba($color: #f8f8f8, $alpha: 0.3);
+    }
+
+    .repo_title {
+        text-decoration: none;
+        color: $primary_color;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        display: inline-block;
+        font-size: 1.1rem;
+        font-weight: bold;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: 2;
+            // display: block;
+            height: 10%;
+            width: 100%;
+            left: 0;
+            bottom: -.3rem;
+            background-color: $secondary_color;
+            border-radius: 5px;
+        }
+
+    }
+
+    .repo_description {
+        margin-bottom: 1rem;
+        color: #636262;
+        font-weight: light;
+    }
+
+    .update {
+        color: #636262;
+        font-weight: light;
+
+        .repo_time {
+            color: #000000;
+        }
+    }
+
+
+}
+
 //Importing Footer
 @import './components/footer';
 

@@ -1,151 +1,115 @@
 <!DOCTYPE html>
 <html lang="eng">
-  <head>
-    <!-- Meta Tags to set default text encoding,vieport width,page description, etc -->
 
-    <!-- Default character/text encoding -->
-    <meta charset="UTF-8" />
+<head>
+  <!-- Meta Tags to set default text encoding,vieport width,page description, etc -->
 
-    <!-- Sets description of page returned by search engines -->
-    <meta
-      name="description"
-      content="Find Githubber is a search engine which returns valid user profiles and reprositories."
-    />
+  <!-- Default character/text encoding -->
+  <meta charset="UTF-8" />
 
-    <!-- Sets keyword which this page catches, increases page's probability of appearing in search engines' search results -->
-    <meta
-      name="keywords"
-      content="Github search engine, search, search engine, github finder, github user, github"
-    />
+  <!-- Sets description of page returned by search engines -->
+  <meta name="description"
+    content="Find Githubber is a search engine which returns valid user profiles and reprositories." />
 
-    <!-- Just sets that I made this page -->
-    <meta name="author" content="nolimith3ndrix" />
+  <!-- Sets keyword which this page catches, increases page's probability of appearing in search engines' search results -->
+  <meta name="keywords" content="Github search engine, search, search engine, github finder, github user, github" />
 
-    <!-- Setting viewport width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Just sets that I made this page -->
+  <meta name="author" content="nolimith3ndrix" />
 
-    <!-- Upgrades insecure requests made by this page -->
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="upgrade-insecure-requests"
-    />
+  <!-- Setting viewport width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Solves compatibility issues with Internet Explorer 7 -->
-    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+  <!-- Upgrades insecure requests made by this page -->
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
-    <!-- Once, again, default character/text encoding -->
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <!-- Solves compatibility issues with Internet Explorer 7 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=7" />
 
-    <!-- Importing fontawesome icon kit -->
-    <script
-      src="https://kit.fontawesome.com/dd146f392e.js"
-      crossorigin="anonymous"
-    ></script>
+  <!-- Once, again, default character/text encoding -->
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 
-    <!-- Importing stylesheet -->
-    <link rel="stylesheet" href="./css/index.css" />
+  <!-- Importing fontawesome icon kit -->
+  <script src="https://kit.fontawesome.com/dd146f392e.js" crossorigin="anonymous"></script>
 
-    <!-- Setting Page title -->
-    <title>Find Githubber</title>
-  </head>
+  <!-- Importing stylesheet -->
+  <link rel="stylesheet" href="./css/index.css" />
 
-  <body class="indexPage">
-    <!-- NavBar  -->
-    <nav class="navBar">
-      <div class="navBar_container">
-        <div class="logo" aria-placeholder="Logo">
-          <h1 class="navBar_header">
-            <span>Find</span>
-            Githubber
-          </h1>
-        </div>
+  <!-- Setting Page title -->
+  <title>Find Githubber</title>
+</head>
 
-        <div class="navBar_links">
-          <a href="" class="navBar_link">Home</a>
-          <a href="#" class="navBar_link">About</a>
-          <a href="" class="navBar_link">Docs</a>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Main content -->
-    <main class="body">
-      <div class="searchBox">
-        <h2 class="l2_header">Find A User</h2>
-
-        <label for="searchBox_textBox" class="searchBox_label">
-          Enter user's name
-          <input
-            type="text"
-            name="searchBox_textBox"
-            id="searchBox_textBox"
-            class="textBox"
-            placeholder="Enter your Github name"
-          />
-        </label>
+<body class="indexPage">
+  <!-- NavBar  -->
+  <nav class="navBar">
+    <div class="navBar_container">
+      <div class="logo" aria-placeholder="Logo">
+        <h1 class="navBar_header">
+          <span>Find</span>
+          Githubber
+        </h1>
       </div>
 
-      <div class="profile_container">
-        <img class="img" src="./img/search.png" alt="">
-        <!-- <div class="profile">
-          <div class="profile_picture">
-            <img src="./img/undraw_the_search_s0xf.svg" alt="" />
-            <a href="">Lorem ipsum dolor sit.</a>
-          </div>
+      <div class="navBar_links">
+        <a href="" class="navBar_link">Home</a>
+        <a href="#" class="navBar_link">About</a>
+        <a href="" class="navBar_link">Docs</a>
+      </div>
+    </div>
+  </nav>
 
-          <div class="profile_details">
-            <div class="profile_stats">
-              <div class="profile_stat">
-                <h4>24</h4>
-                <h3>Public Repositories</h3>
-              </div>
-              <div class="profile_stat">
-                <h4>12</h4>
-                <h3>Public Gists</h3>
-              </div>
-              <div class="profile_stat">
-                <h4>1282</h4>
-                <h3>Followers</h3>
-              </div>
-              <div class="profile_stat">
-                <h4>128</h4>
-                <h3>Following</h3>
-              </div>
-            </div>
+  <!-- Main content -->
+  <main class="body">
+    <div class="searchBox">
+      <h2 class="l2_header">Find A User</h2>
 
-            <div class="profile_descript">
-              <div class="profile_descript_items"><span>Company:</span></div>
-              <div class="profile_descript_items"><span>Website/Blog:</span></div>
-              <div class="profile_descript_items"><span>Location:</span></div>
-              <div class="profile_descript_items"><span>Joined On:</span></div>
-            </div>
-          </div>
-        </div> -->
+      <label for="searchBox_textBox" class="searchBox_label">
+        Enter user's name
+        <input type="text" name="searchBox_textBox" id="searchBox_textBox" class="textBox"
+          placeholder="Enter your Github name" />
+      </label>
+    </div>
+
+    <div class="profile_container">
+      <img class="img" src="./img/search.png" alt="">
+
+    </div>
+
+    <div class="gitRepos">
+      <h2>REPOSITORIES</h2>
+
+      <div class="repos">
+
       </div>
 
-      <div class="gitRepos">
-        <h2>REPOSITORIES</h2>
+      <h4>
+        View more
+      </h4>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer_container">
+      <h3>Find Githubber&copy;</h3>
+
+      <!-- Links to creator's pages -->
+      <div class="footer_links">
+        <a href="https://www.github.com/hendrixgotcodes" target="_blank" class="footer_link"><i
+            class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/nolimith3ndrix" target="_blank" class="footer_link"><i
+            class="fab fa-instagram"></i></a>
+        <a href="https://www.twitter.com/nolimithendrix" target="_blank" class="footer_link"><i
+            class="fab fa-twitter"></i></a>
       </div>
+    </div>
+  </footer>
 
-    </main>
+  <!-- Importing JavaScript files -->
+  <script src="./js/index/oauth.js"></script>
+  <script src="./js/index/ui.js"></script>
+  <script src="./js/index/app.js"></script>
+</body>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer_container">
-        <h3>Find Githubber&copy;</h3>
-
-        <!-- Links to creator's pages -->
-        <div class="footer_links">
-          <a href="https://www.github.com/hendrixgotcodes" target="_blank" class="footer_link"><i class="fab fa-github"></i></a>
-          <a href="https://www.instagram.com/nolimith3ndrix" target="_blank" class="footer_link"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.twitter.com/nolimithendrix" target="_blank" class="footer_link"><i class="fab fa-twitter"></i></a>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Importing JavaScript files -->
-    <script src="./js/index/oauth.js"></script>
-    <script src="./js/index/ui.js"></script>
-    <script src="./js/index/app.js"></script>
-  </body>
 </html>

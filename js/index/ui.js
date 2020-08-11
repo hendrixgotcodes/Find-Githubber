@@ -11,6 +11,9 @@ class UI {
     this.profile_container = document.querySelector('.profile_container');
     this.page = document.querySelector('.indexPage');
     this.body = document.querySelector('.body');
+
+    this.reposDOM = document.querySelector(".repos");
+
   }
 
   /** Function updates the DOM with github users based on user 
@@ -18,9 +21,12 @@ class UI {
 **/
   setProfile(data) {
 
-    console.log(data);
 
     let innerObject = "";
+
+    if(data.public_repos > 10){
+        this.morethan10 = true;
+    }
 
 
     innerObject =
@@ -61,29 +67,17 @@ class UI {
 
     this.profile.innerHTML = innerObject;
 
-    // if (data.name === undefined || data === null) {
-
-    //   if (this.profile_container.querySelector(".img") === null) {
-
-
-    //     const img = document.createElement("img");
-    //     img.src = "../img/undraw_the_search_s0xf.svg";
-    //     img.className = "img";
-
-    //     this.profile_container.appendChild(img);
-
-
-    //   }
-    //   return;
-
-    // }
-
     if (this.profile_container.querySelector('.profile') === null) {
+
+      this.clearAlert("infoAlertShown");
+
       this.profile_container.innerHTML = "";
 
       this.profile_container.appendChild(this.profile);
 
     } else if (this.profile_container.querySelector('.profile') !== null) {
+
+
       this.profile.innerHTML = innerObject;
       this.profile_container.replaceChild(this.profile, this.profile_container.querySelector('.profile'))
 
@@ -91,15 +85,62 @@ class UI {
 
   }
 
+  //Function to display repos in UI
+  setRepos(repos){
+
+    console.clear();
+
+    if(repos.length === 0){
+      this.reposDOM.innerHTML = "No repos for this user";
+      return;
+    }
+    else{
+      console.log("hmmm");
+    }
+
+    let reposInnerHtml = ""
+
+    repos.forEach((repo)=>{
+
+      
+      reposInnerHtml +=
+      `<div class="repo">
+      <a class="repo_title" target="_blank" href="${repo.html_url}">${repo.name}</a>
+      <p class="repo_description">${repo.description}</p>
+      <span class="update"><span class="repo_time">Last Updated At: </span>${repo.updated_at}</span>
+    </div>
+      `
+
+    });
+
+  
+    console.log(this.reposDOM.innerHTML);
+
+    this.reposDOM.innerHTML = reposInnerHtml;
+
+    console.log(this.reposDOM.innerHTML);
+    
+    // if(this.reposDOM.innerHTML === ""){
+    //   this.reposDOM.innerHTML === "No repositories available for this user";
+    // }
+
+
+   
+
+  }
+
   //Function to be called when user is not found
   profileNotFound() {
-    this.showAlert("infoAlert", "Sorry. User Not Found!");
+    this.showAlert("infoAlert", "⚠️Sorry. User Not Found!");
     this.profile_container.innerHTML = `<img class="img" src="./img/error.png" alt="Sorry an error ocuured">`;
+    document.querySelector(".gitRepos").innerHTML = "";
   }
 
   // Sets the background to an image
   setBG() {
     this.profile_container.innerHTML = `<img class="img" src="./img/search.png" alt="">`;
+    document.querySelector(".gitRepos").innerHTML = "";
+
   }
 
 
