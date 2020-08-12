@@ -3,6 +3,8 @@
 .footer {
     border: 1px solid #dbdb;
     align-self: flex-end;
+    background-color: $primary_color;
+
 }
 
 .footer_container {
@@ -12,7 +14,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: $primary_color;
+    color: $plain_color;
+
+    & h3{
+        color: $plain_color;
+    }
 }
 
 // Styling link container
@@ -30,7 +36,7 @@
     font-size: 1.2rem;
     text-transform: uppercase;
     transition: color .3s ease;
-    color: $primary_color;
+    color: $plain_color;
 
     &:hover {
         color: $secondary_color;

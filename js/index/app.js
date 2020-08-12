@@ -26,7 +26,7 @@ searchbox.addEventListener('keyup', (e) => {
             .then((data) => {
 
                 //If promise has a message of null or not found....
-                if (data.profile.message === "Not Found" || data.name === null) {
+                if (data.profile.message === "Not Found" ) {
 
                     //..display error message
                     ui.profileNotFound();
@@ -62,24 +62,53 @@ searchbox.addEventListener('keyup', (e) => {
 });
 
 
-window.addEventListener("resize", (e) => {
-    console.log(window.innerWidth);
-})
 
-//Constantly checking for online avialability
 
-// setInterval(() => {
-//     if (navigator.onLine) {
-//         ui.setWaring('online');
-//         console.log("online")
-//     }
-// }, 5000);
+//Click event to scroll to position of repositories
+window.addEventListener('click', (e)=>{
+    if(e.target.className === "focused" || e.target.classList.contains("focus")){
 
-window.addEventListener("online", () => {
-    ui.checkOnlineAvailabilty;
-    console.log("onlime")
+        console.log("yes");
+
+        window.scrollTo({
+            top: document.getElementById("rHead").offsetTop,
+            left: document.getElementById("rHead").offsetLeft,
+            behavior: 'smooth'
+        })
+
+        console.log("done");
+    }
 });
-window.addEventListener("offline", () => {
-    ui.checkOnlineAvailabilty;
-    console.log("offline");
-})
+
+
+//Switching between darkmode and light mode based on checkbox status(.navBar_cB)
+const checkbox = document.querySelector(".navBar_cB");
+const toggler = document.querySelector(".navBar_toggler");
+const light = document.querySelector(".material-icons");
+
+const light2 = document.createElement("span");
+light2.className = "material-icons";
+light2.classList.add("new");
+light2.innerText = "flare";
+
+const dark = document.createElement('i');
+dark.classList.add("fas");
+dark.classList.add("fa-moon");
+
+console.log(toggler);
+
+checkbox.addEventListener("change",(e)=>{
+
+    if(toggler.querySelector(".old")){
+        toggler.replaceChild(dark,light);
+    }
+    else if(toggler.querySelector(".new")){
+        toggler.replaceChild(dark,light2);
+    }
+    else{
+        toggler.replaceChild(light2,dark);
+    }
+    
+});
+
+

@@ -38,20 +38,20 @@ class UI {
   
             <div class="profile_details">
               <div class="profile_stats">
-                <div class="profile_stat">
-                  <h4>${data.public_repos}</h4>
-                  <h3>Public Repositories</h3>
+                <div class="profile_stat focus">
+                  <h4 class="focused">${data.public_repos}</h4>
+                  <h3 class="focused">Public Repositories</h3>
                 </div>
                 <div class="profile_stat">
                   <h4>${data.public_gists}</h4>
                   <h3>Public Gists</h3>
                 </div>
                 <div class="profile_stat">
-                  <h4>${data.followers}</h4>
-                  <h3>Followers</h3>
+                  <h4 >${data.followers}</h4>
+                  <h3 >Followers</h3>
                 </div>
                 <div class="profile_stat">
-                  <h4>${data.following}</h4>
+                  <h4 >${data.following}</h4>
                   <h3>Following</h3>
                 </div>
               </div>
@@ -133,13 +133,13 @@ class UI {
   profileNotFound() {
     this.showAlert("infoAlert", "⚠️Sorry. User Not Found!");
     this.profile_container.innerHTML = `<img class="img" src="./img/error.png" alt="Sorry an error ocuured">`;
-    document.querySelector(".gitRepos").innerHTML = "";
+    document.querySelector(".repos").innerHTML = "";
   }
 
   // Sets the background to an image
   setBG() {
     this.profile_container.innerHTML = `<img class="img" src="./img/search.png" alt="">`;
-    document.querySelector(".gitRepos").innerHTML = "";
+    document.querySelector(".repos").innerHTML = "";
 
   }
 
@@ -167,6 +167,7 @@ class UI {
 
     setTimeout(() => {
       warn.classList.toggle("pushed");
+     
     }, 300);
 
     setTimeout(() => {

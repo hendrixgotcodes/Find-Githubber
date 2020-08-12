@@ -1,115 +1,151 @@
 <!DOCTYPE html>
 <html lang="eng">
+  <head>
+    <!-- Meta Tags to set default text encoding,vieport width,page description, etc -->
 
-<head>
-  <!-- Meta Tags to set default text encoding,vieport width,page description, etc -->
+    <!-- Default character/text encoding -->
+    <meta charset="UTF-8" />
 
-  <!-- Default character/text encoding -->
-  <meta charset="UTF-8" />
+    <!-- Sets description of page returned by search engines -->
+    <meta
+      name="description"
+      content="Find Githubber is a search engine which returns valid user profiles and reprositories."
+    />
 
-  <!-- Sets description of page returned by search engines -->
-  <meta name="description"
-    content="Find Githubber is a search engine which returns valid user profiles and reprositories." />
+    <!-- Sets keyword which this page catches, increases page's probability of appearing in search engines' search results -->
+    <meta
+      name="keywords"
+      content="Github search engine, search, search engine, github finder, github user, github"
+    />
 
-  <!-- Sets keyword which this page catches, increases page's probability of appearing in search engines' search results -->
-  <meta name="keywords" content="Github search engine, search, search engine, github finder, github user, github" />
+    <!-- Just sets that I made this page -->
+    <meta name="author" content="nolimith3ndrix" />
 
-  <!-- Just sets that I made this page -->
-  <meta name="author" content="nolimith3ndrix" />
+    <!-- Setting viewport width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Setting viewport width -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Upgrades insecure requests made by this page -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
 
-  <!-- Upgrades insecure requests made by this page -->
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <!-- Solves compatibility issues with Internet Explorer 7 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
 
-  <!-- Solves compatibility issues with Internet Explorer 7 -->
-  <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <!-- Once, again, default character/text encoding -->
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 
-  <!-- Once, again, default character/text encoding -->
-  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <!-- Importing fontawesome icon kit -->
+    <script
+      src="https://kit.fontawesome.com/dd146f392e.js"
+      crossorigin="anonymous"
+    ></script>
 
-  <!-- Importing fontawesome icon kit -->
-  <script src="https://kit.fontawesome.com/dd146f392e.js" crossorigin="anonymous"></script>
+    <!-- Importing material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
-  <!-- Importing stylesheet -->
-  <link rel="stylesheet" href="./css/index.css" />
+    <!-- Importing stylesheet -->
+    <link rel="stylesheet" href="./css/index.css" />
 
-  <!-- Setting Page title -->
-  <title>Find Githubber</title>
-</head>
+    <!-- Setting Page title -->
+    <title>Find Githubber</title>
+  </head>
 
-<body class="indexPage">
-  <!-- NavBar  -->
-  <nav class="navBar">
-    <div class="navBar_container">
-      <div class="logo" aria-placeholder="Logo">
-        <h1 class="navBar_header">
-          <span>Find</span>
-          Githubber
-        </h1>
+  <body class="indexPage">
+    <!-- NavBar  -->
+    <nav class="navBar">
+      <div class="navBar_container">
+        <div class="logo" aria-placeholder="Logo">
+          <h1 class="navBar_header">
+            <span>Find</span>
+            Githubber
+          </h1>
+        </div>
+
+        <div class="navBar_toggler">
+          <input type="checkbox" name="" class="navBar_cB">
+          <span class="material-icons old">
+            flare
+            </span>
+        </div>
+
+        <div class="navBar_links">
+          <a href="" class="navBar_link">Home</a>
+          <a href="#" class="navBar_link">Options</a>
+          <a href="" class="navBar_link">Docs</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="body">
+      <div class="searchBox">
+        <h2 class="l2_header">Find A User</h2>
+
+        <label for="searchBox_textBox" class="searchBox_label">
+          Enter user's name
+          <input
+            type="text"
+            name="searchBox_textBox"
+            id="searchBox_textBox"
+            class="textBox"
+            placeholder="Enter your Github name"
+          />
+        </label>
       </div>
 
-      <div class="navBar_links">
-        <a href="" class="navBar_link">Home</a>
-        <a href="#" class="navBar_link">About</a>
-        <a href="" class="navBar_link">Docs</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Main content -->
-  <main class="body">
-    <div class="searchBox">
-      <h2 class="l2_header">Find A User</h2>
-
-      <label for="searchBox_textBox" class="searchBox_label">
-        Enter user's name
-        <input type="text" name="searchBox_textBox" id="searchBox_textBox" class="textBox"
-          placeholder="Enter your Github name" />
-      </label>
-    </div>
-
-    <div class="profile_container">
-      <img class="img" src="./img/search.png" alt="">
-
-    </div>
-
-    <div class="gitRepos">
-      <h2>REPOSITORIES</h2>
-
-      <div class="repos">
-
+      <div class="profile_container">
+        <img class="img" src="./img/search.png" alt="" />
       </div>
 
-      <h4>
-        View more
-      </h4>
-    </div>
+      <div class="gitRepos">
+        <h2 id="rHead">REPOSITORIES</h2>
 
-  </main>
+        <div class="repos"></div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer_container">
-      <h3>Find Githubber&copy;</h3>
-
-      <!-- Links to creator's pages -->
-      <div class="footer_links">
-        <a href="https://www.github.com/hendrixgotcodes" target="_blank" class="footer_link"><i
-            class="fab fa-github"></i></a>
-        <a href="https://www.instagram.com/nolimith3ndrix" target="_blank" class="footer_link"><i
-            class="fab fa-instagram"></i></a>
-        <a href="https://www.twitter.com/nolimithendrix" target="_blank" class="footer_link"><i
-            class="fab fa-twitter"></i></a>
+        <h4>
+          View more
+        </h4>
       </div>
-    </div>
-  </footer>
+    </main>
 
-  <!-- Importing JavaScript files -->
-  <script src="./js/index/oauth.js"></script>
-  <script src="./js/index/ui.js"></script>
-  <script src="./js/index/app.js"></script>
-</body>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer_container">
+        <h3>Find Githubber&copy;</h3>
 
+        <!-- Links to creator's pages -->
+        <div class="footer_links">
+          <a
+            href="https://www.github.com/hendrixgotcodes"
+            target="_blank"
+            class="footer_link"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/nolimith3ndrix"
+            target="_blank"
+            class="footer_link"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.twitter.com/nolimith3ndrix"
+            target="_blank"
+            class="footer_link"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Importing JavaScript files -->
+    <script src="./js/index/oauth.js"></script>
+    <script src="./js/index/ui.js"></script>
+    <script src="./js/index/app.js"></script>
+  </body>
 </html>

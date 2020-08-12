@@ -91,7 +91,7 @@
 }
 
 .profile_picture {
-    width: 28%;
+    width: 23%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -104,27 +104,35 @@
 
 
     & img {
-        width: 100%;
+        width: 95%;
         height: 80%;
         // background-color: green;
         display: block;
         position: relative;
-        top: -2rem;
+        top: -2.4rem;
         left: 0;
         // border-top-left-radius: 4px;
         // border-top-right-radius: 4px;
         border-radius: 4px;
+        border: 2px solid $primary_color;
+       
     }
 
     & a {
         // width: 50%;
 
         text-decoration: none;
-        color: $primary_color;
-        background-color: #fff;
+        color: $plain_color;
+        background-color: $primary_color;
         text-align: center;
         padding: .6rem 3.5rem;
-        border-radius: 4px;
+        border: 2px solid $secondary_color;
+        transition: .3s;
+
+        &:hover{
+            background-color: $plain_color;
+            color: $primary_color;
+        }
     }
 }
 
@@ -164,10 +172,16 @@
     align-items: center;
     color: $plain_color;
     padding: 1rem;
+    transition: .3s;
 
     &:first-child {
         border-top-left-radius: 4px;
         border-bottom-left-radius: 4px;
+    }
+
+    &:last-child{
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
     }
 
 
@@ -176,6 +190,7 @@
         cursor: pointer;
     }
 }
+
 
 .profile_descript {
     height: 60%;
@@ -196,6 +211,7 @@
     &:last-child {
         border-bottom: none;
     }
+
 }
 
 .gitRepos {
@@ -207,12 +223,13 @@
         font-size: 1.5rem;
         margin-bottom: 1rem;
     }
-    h4{
+
+    h4 {
         text-decoration: none;
         text-align: center;
         margin: 1.5rem auto;
         cursor: pointer;
-        display: none; 
+        display: none;
     }
 }
 
@@ -224,7 +241,7 @@
         border-top: 1px solid #cecece;
     }
 
-    &:nth-child(odd){
+    &:nth-child(odd) {
         background-color: rgba($color: #f8f8f8, $alpha: 0.3);
     }
 
@@ -250,6 +267,25 @@
             background-color: $secondary_color;
             border-radius: 5px;
         }
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: 3;
+            // display: block;
+            height: 10%;
+            width: 0%;
+            left: 0;
+            bottom: -.3rem;
+            background-color: $primary_color;
+            border-radius: 5px;
+            transition: .3s;
+        }
+
+        &:hover::before{
+            width: 100%;
+        }
+
 
     }
 
@@ -281,3 +317,4 @@
 
 @import "./util/onlineOfllineCard";
 @import "./mediaQueries/responsiveness";
+

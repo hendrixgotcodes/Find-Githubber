@@ -1,3 +1,15 @@
+@media only screen and (max-width: 1150px){
+    
+    // .navBar_links{
+    //     width: ;
+    // }
+
+    .navBar_link{
+        margin-right: .65rem;
+        font-size: 1.15rem;
+    }
+}
+
 @media only screen and (max-width: 1024px) {
     .navBar_header {
         font-size: 1.9rem;
@@ -26,6 +38,7 @@
     .navBar_links {
         width: 30%;
     }
+    
 
 
     // STYLING PROFILE SECTION
