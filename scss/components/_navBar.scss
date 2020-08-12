@@ -17,7 +17,7 @@
 //Styling h1 text in the navBar which appears as logo
 .navBar_header {
     font-size: 2rem;
-    color: #fff;
+    color: $plain_color;
     display: block;
 
     & span {
@@ -41,7 +41,7 @@
 }
 
 
-//Styling Toggler
+//Styling Darkmode-LightMode Toggler
 .navBar_toggler {
     width: 2.3rem;
     border: 1.5px solid $plain_color;
@@ -53,6 +53,13 @@
     color: $secondary_color;
 
     text-align: center;
+    transition: .3s;
+
+    &:hover {
+        background-color: $plain_color;
+        // color: darken($color: $secondary_color, $amount: 10%);
+        color: $primary_color;
+    }
 }
 
 .navBar_cB {
@@ -62,6 +69,7 @@
     width: 85%;
     height: 85%;
     opacity: 0;
+    cursor: pointer;
 }
 
 

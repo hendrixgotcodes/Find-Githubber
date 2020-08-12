@@ -1,3 +1,5 @@
+"use strict";
+
 //Getting searchbox
 const searchbox = document.querySelector('.textBox');
 const ui = new UI();
@@ -68,7 +70,6 @@ searchbox.addEventListener('keyup', (e) => {
 window.addEventListener('click', (e)=>{
     if(e.target.className === "focused" || e.target.classList.contains("focus")){
 
-        console.log("yes");
 
         window.scrollTo({
             top: document.getElementById("rHead").offsetTop,
@@ -76,7 +77,6 @@ window.addEventListener('click', (e)=>{
             behavior: 'smooth'
         })
 
-        console.log("done");
     }
 });
 
@@ -95,7 +95,6 @@ const dark = document.createElement('i');
 dark.classList.add("fas");
 dark.classList.add("fa-moon");
 
-console.log(toggler);
 
 checkbox.addEventListener("change",(e)=>{
 
@@ -112,3 +111,27 @@ checkbox.addEventListener("change",(e)=>{
 });
 
 
+
+//Instantiating UTILL class
+const utill = new UTILL();
+
+// calling util methods
+utill.showGoToTop();
+utill.scrollUp();
+
+//Tooltip
+window.addEventListener("mouseenter",(e)=>{
+    if(e.target.className="language"){
+        // utill.appendToolTip(e.x,e.y,"Programming language");
+        console.clear();
+        console.log("here");
+    }
+    else{
+        console.clear();
+        console.log(e.target.className);
+    }
+})
+
+// const language = document.getElementById("language");
+// language.addEventListener("mouseenter", utill.appendToolTip);
+// language.addEventListener("mouseleave",utill.removeToolTip);

@@ -18,5 +18,6 @@ h1 {
     font-family: $header_font;
 }
 body{
-    background: linear-gradient(to bottom,#fff, #fafafa);
+    // background: linear-gradient(to bottom,#fff, #fafafa);
+    background-color: $plain_color;
 }

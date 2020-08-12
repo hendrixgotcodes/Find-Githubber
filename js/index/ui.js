@@ -58,7 +58,7 @@ class UI {
   
               <div class="profile_descript">
                 <div class="profile_descript_items"><span>Company: ${data.company}</span></div>
-                <div class="profile_descript_items"><span>Website/Blog: ${data.blog}</span></div>
+                <div class="profile_descript_items"><a href="${data.blog}" target="_blank">Website/Blog </a></div>
                 <div class="profile_descript_items"><span>Location: ${data.location}</span></div>
                 <div class="profile_descript_items"><span>Joined On: ${data.created_at}</span></div>
               </div>
@@ -107,8 +107,24 @@ class UI {
       `<div class="repo">
       <a class="repo_title" target="_blank" href="${repo.html_url}">${repo.name}</a>
       <p class="repo_description">${repo.description}</p>
+  
       <span class="update"><span class="repo_time">Last Updated At: </span>${repo.updated_at}</span>
-    </div>
+      <div class="repo_awards">
+        
+        <span id="language" class="language repo_award">
+        <i class="fas fa-wrench"></i>:  <span>${repo.language}</span>
+        </span>
+
+        <span class="stars repo_award">
+        <i class="fas fa-star"></i>: <label>${repo.stargazers_count}</label>
+        </span>
+
+        <span class="forks repo_award">
+        <i class="fas fa-project-diagram"></i>: <label>${repo.forks}</label>
+        </span>
+      </div>
+      
+      </div>
       `
 
     });
