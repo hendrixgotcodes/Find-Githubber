@@ -19,6 +19,8 @@
     font-size: 2rem;
     color: $plain_color;
     display: block;
+    transition: color .3s;
+
 
     & span {
         font-family: $header_font;
@@ -59,6 +61,11 @@
         background-color: $plain_color;
         // color: darken($color: $secondary_color, $amount: 10%);
         color: $primary_color;
+    }
+
+    & .fa-moon{
+        color: $darkmode_color;
+        transition: color .3s;
     }
 }
 

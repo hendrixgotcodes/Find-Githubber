@@ -157,12 +157,6 @@
     background-color: $primary_color;
     border-radius: 4px;
 
-    & h2,
-    h3,
-    h4 {
-        color: $plain_color;
-
-    }
 }
 
 .profile_stat {
@@ -192,6 +186,10 @@
         background-color: darken($color: $primary_color, $amount: 8);
         cursor: pointer;
     }
+}
+
+.profile_stat_header {
+    color: $plain_color;
 }
 
 
@@ -236,6 +234,7 @@
     margin: 2rem 0;
 
     h2 {
+        color: $primary_color;
         font-size: 1.5rem;
         margin-bottom: 1rem;
     }
@@ -266,7 +265,8 @@
     }
 
     &:nth-child(odd) {
-        background-color: rgba($color: #f8f8f8, $alpha: 0.3);
+        background-color: rgba($color: #000, $alpha: 0.09);
+        // background-color: darken($color: #000, $amount: 0);
     }
 
     .repo_title {
@@ -329,29 +329,30 @@
         }
     }
 
-        & .repo_awards {
-            font-size: .9rem;
-            width: fit-content;
-            margin-top: 1rem;
-            color: #696969;
-            cursor: inherit;
+    & .repo_awards {
+        font-size: .9rem;
+        width: fit-content;
+        margin-top: 1rem;
+        color: #696969;
+        cursor: inherit;
 
 
-            // background-color: red;
-            & .repo_award {
-                padding: 0 .5rem;
-                border-right: 1px solid darken($color: $plain_color, $amount: 18%);
+        // background-color: red;
+        & .repo_award {
+            padding: 0 .5rem;
+            border-right: 1px solid darken($color: $plain_color, $amount: 18%);
 
-                &:last-child{
-                    border: none;
-                }
-                &:first-child{
-                    padding-left: 0;
-                }
-
+            &:last-child {
+                border: none;
             }
+
+            &:first-child {
+                padding-left: 0;
+            }
+
         }
-    
+    }
+
 
 
 
@@ -370,3 +371,20 @@
 
 //Importing media querie for responsiveness
 @import "./mediaQueries/responsiveness";
+
+
+///THEMES
+.darkmode--text {
+    color: $darkmode_color;
+}
+
+.darkmode--border {
+    // border: 1px solid $darkmode_color;
+    border-color: $darkmode_color;
+}
+
+.darkmode--background {
+    background: none;
+    background-color: #2b2b2b;
+    transition: .5s;
+}

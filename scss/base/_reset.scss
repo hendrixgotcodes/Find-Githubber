@@ -10,14 +10,15 @@
     font-family: $primary_font;
     // font-size: 1vw;
 }
-h1,h2,h3,h4,h5,h6{
-    color: $primary_color;
-}
+// h1,h2,h3,h4,h5,h6{
+//     color: $primary_color;
+// }
 
 h1 {
     font-family: $header_font;
 }
 body{
-    // background: linear-gradient(to bottom,#fff, #fafafa);
-    background-color: $plain_color;
+    background: linear-gradient(to bottom,#fff, #fafafa);
+    // background-color: $plain_color;
+    transition: .5s;
 }

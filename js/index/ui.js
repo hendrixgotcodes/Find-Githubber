@@ -24,8 +24,8 @@ class UI {
 
     let innerObject = "";
 
-    if(data.public_repos > 10){
-        this.morethan10 = true;
+    if (data.public_repos > 10) {
+      this.morethan10 = true;
     }
 
 
@@ -39,20 +39,20 @@ class UI {
             <div class="profile_details">
               <div class="profile_stats">
                 <div class="profile_stat focus">
-                  <h4 class="focused">${data.public_repos}</h4>
-                  <h3 class="focused">Public Repositories</h3>
+                  <h4 class="profile_stat_header focused theme--text">${data.public_repos}</h4>
+                  <h3 class="profile_stat_header focused theme--text">Public Repositories</h3>
                 </div>
                 <div class="profile_stat">
-                  <h4>${data.public_gists}</h4>
-                  <h3>Public Gists</h3>
+                  <h4 class="profile_stat_header theme--text">${data.public_gists}</h4>
+                  <h3 class="profile_stat_header theme--text">Public Gists</h3>
                 </div>
                 <div class="profile_stat">
-                  <h4 >${data.followers}</h4>
-                  <h3 >Followers</h3>
+                  <h4 class="profile_stat_header theme--text">${data.followers}</h4>
+                  <h3 class="profile_stat_header theme--text">Followers</h3>
                 </div>
                 <div class="profile_stat">
-                  <h4 >${data.following}</h4>
-                  <h3>Following</h3>
+                  <h4 class="profile_stat_header theme--text">${data.following}</h4>
+                  <h3 class="profile_stat_header theme--text">Following</h3>
                 </div>
               </div>
   
@@ -86,25 +86,24 @@ class UI {
   }
 
   //Function to display repos in UI
-  setRepos(repos){
+  setRepos(repos) {
 
     console.clear();
 
-    if(repos.length === 0){
+    if (repos.length === 0) {
       this.reposDOM.innerHTML = "No repos for this user";
       return;
-    }
-    else{
+    } else {
       console.log("hmmm");
     }
 
     let reposInnerHtml = ""
 
-    repos.forEach((repo)=>{
+    repos.forEach((repo) => {
 
-      
+
       reposInnerHtml +=
-      `<div class="repo">
+        `<div class="repo">
       <a class="repo_title" target="_blank" href="${repo.html_url}">${repo.name}</a>
       <p class="repo_description">${repo.description}</p>
   
@@ -129,19 +128,19 @@ class UI {
 
     });
 
-  
+
     console.log(this.reposDOM.innerHTML);
 
     this.reposDOM.innerHTML = reposInnerHtml;
 
     console.log(this.reposDOM.innerHTML);
-    
+
     // if(this.reposDOM.innerHTML === ""){
     //   this.reposDOM.innerHTML === "No repositories available for this user";
     // }
 
 
-   
+
 
   }
 
@@ -183,7 +182,7 @@ class UI {
 
     setTimeout(() => {
       warn.classList.toggle("pushed");
-     
+
     }, 300);
 
     setTimeout(() => {

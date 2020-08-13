@@ -80,44 +80,13 @@ window.addEventListener('click', (e)=>{
     }
 });
 
-
-//Switching between darkmode and light mode based on checkbox status(.navBar_cB)
-const checkbox = document.querySelector(".navBar_cB");
-const toggler = document.querySelector(".navBar_toggler");
-const light = document.querySelector(".material-icons");
-
-const light2 = document.createElement("span");
-light2.className = "material-icons";
-light2.classList.add("new");
-light2.innerText = "flare";
-
-const dark = document.createElement('i');
-dark.classList.add("fas");
-dark.classList.add("fa-moon");
-
-
-checkbox.addEventListener("change",(e)=>{
-
-    if(toggler.querySelector(".old")){
-        toggler.replaceChild(dark,light);
-    }
-    else if(toggler.querySelector(".new")){
-        toggler.replaceChild(dark,light2);
-    }
-    else{
-        toggler.replaceChild(light2,dark);
-    }
-    
-});
-
-
-
 //Instantiating UTILL class
 const utill = new UTILL();
 
 // calling util methods
 utill.showGoToTop();
 utill.scrollUp();
+utill.toggleTheme();
 
 //Tooltip
 window.addEventListener("mouseenter",(e)=>{

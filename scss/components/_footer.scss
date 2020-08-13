@@ -16,9 +16,11 @@
     align-items: center;
     color: $plain_color;
 
-    & h3{
-        color: $plain_color;
-    }
+
+}
+.footer_header{
+    color: $plain_color;
+    transition: color .3s;
 }
 
 // Styling link container

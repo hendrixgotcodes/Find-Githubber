@@ -6,14 +6,12 @@
   box-sizing: border-box;
   font-family: Lato, sans-serif; }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #242582; }
-
 h1 {
   font-family: "Bree Serif", serif; }
 
 body {
-  background-color: #ffffff; }
+  background: linear-gradient(to bottom, #fff, #fafafa);
+  transition: .5s; }
 
 .navBar {
   background-color: #242582; }
@@ -30,7 +28,8 @@ body {
 .navBar_header {
   font-size: 2rem;
   color: #ffffff;
-  display: block; }
+  display: block;
+  transition: color .3s; }
   .navBar_header span {
     font-family: "Bree Serif", serif;
     display: inline-block;
@@ -60,6 +59,9 @@ body {
   .navBar_toggler:hover {
     background-color: #ffffff;
     color: #242582; }
+  .navBar_toggler .fa-moon {
+    color: #ababab;
+    transition: color .3s; }
 
 .navBar_cB {
   position: absolute;
@@ -190,10 +192,6 @@ body {
   display: flex;
   background-color: #242582;
   border-radius: 4px; }
-  .profile_stats h2,
-  .profile_stats h3,
-  .profile_stats h4 {
-    color: #ffffff; }
 
 .profile_stat {
   height: 100%;
@@ -215,6 +213,9 @@ body {
   .profile_stat:hover {
     background-color: #1b1c62;
     cursor: pointer; }
+
+.profile_stat_header {
+  color: #ffffff; }
 
 .profile_descript {
   height: 60%;
@@ -243,6 +244,7 @@ body {
   width: 100%;
   margin: 2rem 0; }
   .gitRepos h2 {
+    color: #242582;
     font-size: 1.5rem;
     margin-bottom: 1rem; }
   .gitRepos h4 {
@@ -261,7 +263,7 @@ body {
   .repo:first-child {
     border-top: 1px solid #d1d1d1; }
   .repo:nth-child(odd) {
-    background-color: rgba(248, 248, 248, 0.3); }
+    background-color: rgba(0, 0, 0, 0.09); }
   .repo .repo_title {
     text-decoration: none;
     color: #242582;
@@ -331,8 +333,10 @@ body {
   justify-content: space-between;
   align-items: center;
   color: #ffffff; }
-  .footer_container h3 {
-    color: #ffffff; }
+
+.footer_header {
+  color: #ffffff;
+  transition: color .3s; }
 
 .footer_links {
   display: flex;
@@ -535,3 +539,14 @@ body {
   .infoAlertShown {
     font-size: .5rem;
     padding: .5rem; } }
+
+.darkmode--text {
+  color: #ababab; }
+
+.darkmode--border {
+  border-color: #ababab; }
+
+.darkmode--background {
+  background: none;
+  background-color: #2b2b2b;
+  transition: .5s; }
