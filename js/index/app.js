@@ -128,6 +128,7 @@ window.addEventListener('click', (e)=>{
        getGithub.getUser(userName,pageNumber)
        .then((data)=>{
            ui.setRepos(data.repos);
+           pageNumber++;
        });
 
        if(gitReposNav.querySelector("#previousPage") === null){
@@ -136,17 +137,21 @@ window.addEventListener('click', (e)=>{
     }
 
     if(e.target.id === "previousPage"){
-        window.scrollTo({
-            top: document.getElementById("rHead").offsetTop,
-            left: document.getElementById("rHead").offsetLeft,
-            behavior: 'smooth'
-        });
-
-
-       getGithub.getUser(userName,pageNumber-2)
-       .then((data)=>{
-           ui.setRepos(data.repos);
-       });
+        if(pageNumber > 0){
+            window.scrollTo({
+                top: document.getElementById("rHead").offsetTop,
+                left: document.getElementById("rHead").offsetLeft,
+                behavior: 'smooth'
+            });
+    
+    
+           getGithub.getUser(userName,pageNumber-2)
+           .then((data)=>{
+               ui.setRepos(data.repos);
+               pageNumber--;
+           });
+        }
+       
     }
 });
 
