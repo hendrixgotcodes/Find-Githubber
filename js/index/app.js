@@ -1,10 +1,25 @@
 "use strict";
 
+// Instantiating UI object
+const ui = new UI();
 //Getting searchbox
 const searchbox = document.querySelector('.textBox');
-const ui = new UI();
 
 const profile_container = document.querySelector('.profile_container');
+let userName = "";
+let pageNumber = 2;
+
+const gitReposNav = document.querySelector(".gitRepos_nav");
+//Creating Navigation Links
+const nextPage = document.createElement("h4");
+nextPage.textContent = "Next Page";
+nextPage.className = "pageSwitch";
+nextPage.id = "nextPage";
+
+const previousPage = document.createElement("h4");
+previousPage.textContent = "Previous Page";
+previousPage.className = "pageSwitch";
+previousPage.id = "previousPage";
 
 
 //Creating an instance of the oauth object
@@ -23,8 +38,10 @@ searchbox.addEventListener('keyup', (e) => {
     //If textbox is not empty....
     if (e.target.value !== "") {
 
+        userName = e.target.value;
+        console.log(userName);
         // ....receive promise from oauth instance
-        getGithub.getUser(e.target.value)
+        getGithub.getUser(e.target.value,1)
             .then((data) => {
 
                 //If promise has a message of null or not found....
@@ -42,6 +59,10 @@ searchbox.addEventListener('keyup', (e) => {
                     }
                     //...display user repo
                     ui.setRepos(data.repos);
+
+                    if(gitReposNav.querySelector("nextPage")===null){
+                        gitReposNav.appendChild(nextPage);
+                    }
                 }
             })
 
@@ -63,6 +84,24 @@ searchbox.addEventListener('keyup', (e) => {
 
 });
 
+// document.getElementById("nextPage").addEventListener("click",()=>{
+
+    
+//     window.scrollTo({
+//         top: document.getElementById("rHead").offsetTop,
+//         left: document.getElementById("rHead").offsetLeft,
+//         behavior: 'smooth'
+//     });
+
+//     getGithub.getUser(userName,pageNumber)
+//     .then((data)=>{
+//         ui.setRepos(data.repos);
+//         pageNumber++;
+//     })
+// });
+
+
+
 
 
 
@@ -75,8 +114,39 @@ window.addEventListener('click', (e)=>{
             top: document.getElementById("rHead").offsetTop,
             left: document.getElementById("rHead").offsetLeft,
             behavior: 'smooth'
-        })
+        });
 
+    }
+
+    if(e.target.id === "nextPage"){
+        window.scrollTo({
+            top: document.getElementById("rHead").offsetTop,
+            left: document.getElementById("rHead").offsetLeft,
+            behavior: 'smooth'
+        });
+
+       getGithub.getUser(userName,pageNumber)
+       .then((data)=>{
+           ui.setRepos(data.repos);
+       });
+
+       if(gitReposNav.querySelector("#previousPage") === null){
+           gitReposNav.appendChild(previousPage);
+       }
+    }
+
+    if(e.target.id === "previousPage"){
+        window.scrollTo({
+            top: document.getElementById("rHead").offsetTop,
+            left: document.getElementById("rHead").offsetLeft,
+            behavior: 'smooth'
+        });
+
+
+       getGithub.getUser(userName,pageNumber-2)
+       .then((data)=>{
+           ui.setRepos(data.repos);
+       });
     }
 });
 

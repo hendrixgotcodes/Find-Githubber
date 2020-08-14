@@ -88,14 +88,10 @@ class UI {
   //Function to display repos in UI
   setRepos(repos) {
 
-    console.clear();
-
     if (repos.length === 0) {
       this.reposDOM.innerHTML = "No repos for this user";
       return;
-    } else {
-      console.log("hmmm");
-    }
+    } 
 
     let reposInnerHtml = ""
 
@@ -129,11 +125,9 @@ class UI {
     });
 
 
-    console.log(this.reposDOM.innerHTML);
 
     this.reposDOM.innerHTML = reposInnerHtml;
 
-    console.log(this.reposDOM.innerHTML);
 
     // if(this.reposDOM.innerHTML === ""){
     //   this.reposDOM.innerHTML === "No repositories available for this user";

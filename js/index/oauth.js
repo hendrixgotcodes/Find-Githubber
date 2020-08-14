@@ -6,10 +6,10 @@ class oauth{
         this.sort_repos_by = "created: asc";
     }
 
-    async getUser(userName){
+    async getUser(userName,pageNumber){
         let profileResponse =  await fetch(`https://api.github.com/users/${userName}?client_id=${this.id}&client_secret=${this.secret}`);
 
-        let repoResponse =  await fetch(`https://api.github.com/users/${userName}/repos?per_page=${this.repos_per_page}&sort=${this.sort_repos_by}&client_id=${this.id}&client_secret=${this.secret}`);
+        let repoResponse =  await fetch(`https://api.github.com/users/${userName}/repos?page=${pageNumber}&per_page=${this.repos_per_page}&sort=${this.sort_repos_by}&client_id=${this.id}&client_secret=${this.secret}`);
 
         let repos =  await repoResponse.json();
 
