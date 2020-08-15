@@ -1,6 +1,9 @@
 /**THIS UI CLASS IS A PROTOTYPE WHICH CONTAINS
 SEVERAL METHODS FOR UPDATING THE DOM
 **/
+
+"use strict";
+
 class UI {
   constructor() {
     //Creating DOM Elements
@@ -60,7 +63,7 @@ class UI {
                 <div class="profile_descript_items"><span>Company: ${data.company}</span></div>
                 <div class="profile_descript_items"><a href="${data.blog}" target="_blank">Website/Blog </a></div>
                 <div class="profile_descript_items"><span>Location: ${data.location}</span></div>
-                <div class="profile_descript_items"><span>Joined On: ${data.created_at}</span></div>
+                <div class="profile_descript_items"><span>Joined: ${this.getTime(data.created_at)}</span></div>
               </div>
             </div>
             `;
@@ -91,7 +94,7 @@ class UI {
     if (repos.length === 0) {
       this.reposDOM.innerHTML = "No repos for this user";
       return;
-    } 
+    }
 
     let reposInnerHtml = ""
 
@@ -103,7 +106,7 @@ class UI {
       <a class="repo_title" target="_blank" href="${repo.html_url}">${repo.name}</a>
       <p class="repo_description">${repo.description}</p>
   
-      <span class="update"><span class="repo_time">Last Updated At: </span>${repo.updated_at}</span>
+      <span class="update"><span class="repo_time">Last Updated At: </span>${this.getTime(repo.updated_at)}</span>
       <div class="repo_awards">
         
         <span id="language" class="language repo_award">
@@ -192,6 +195,7 @@ class UI {
     }
   }
 
+  //Alert Notifications
   showAlert(alertType, textContent) {
 
     this.clearAlert(alertType);
@@ -222,6 +226,56 @@ class UI {
     if (alertBox) {
       alertBox.remove();
     }
+  }
+
+  getTime(date) {
+
+    let firstDay = new Date(date);
+    let today = new Date();
+    let unit = ""
+
+    let lastUpdated = today - firstDay;
+
+    lastUpdated = lastUpdated / (1000 * 3600 * 24);
+
+    // console.clear();                   
+
+    console.log(`lastUpdated: ${lastUpdated}`);
+
+    if (lastUpdated > 365) {
+
+      lastUpdated = Number.parseInt(lastUpdated / 365);
+
+
+      if (lastUpdated > 1) {
+        unit = "years";
+      } else {
+        unit = "year";
+      }
+    } else {
+
+
+      if (lastUpdated > 30) {
+
+        lastUpdated = parseInt(lastUpdated / 30);
+
+        if(lastUpdated === 1){
+          unit = "month";
+        }
+        else{
+          unit = "months";
+        }
+        
+      }
+      else if (lastUpdated === 1) {
+        unit = "day";
+      } else {
+        unit = "days";
+      }
+    }
+    console.log(parseInt(lastUpdated));
+
+    return `${Number.parseInt(lastUpdated)}  ${unit}  ago`;
   }
 
 }

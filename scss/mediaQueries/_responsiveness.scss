@@ -40,6 +40,13 @@
     }
     
 
+    .navBar_toggler{
+        width: 2rem;
+        height: 2rem;
+        padding: .18rem;
+    }
+
+
 
     // STYLING PROFILE SECTION
 
@@ -83,6 +90,18 @@
         font-size: 1rem;
     }
 
+    .navBar_toggler{
+        width: 1.5rem;
+        height: 1.5rem;
+        padding: 0rem;
+
+        & .material-icon{
+            width: 20%;
+            height: 10%;
+        }
+    }
+
+   
     // .navBar_links{
     //     width: 25%;
     // }
@@ -176,6 +195,29 @@
         padding: .8rem
     }
 
+    .gitRepos{
+        h2{
+            font-size: .9rem;
+        }
+    }
+
+    .footer_header{
+        font-size: .8rem;
+    }
+
+   
+}
+@media only screen and (max-width: 500px){
+    .navBar_toggler{
+        width: 1.5rem;
+        height: 1.5rem;
+        padding: 0rem;
+       
+
+        & .material-icons{
+            font-size: .95rem;
+        }
+    }
 }
 
 @media only screen and (max-width: 356px) {
@@ -190,12 +232,30 @@
         font-size: .8rem;
     }
 
+    .navBar_toggler{
+        width: .85rem;
+        height: .85rem;
+        padding: 0rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: .5rem;
+
+
+        & .material-icons{
+            font-size: .5rem;            
+        }
+    }
+
+
+
     .navBar_links {
         width: 35%;
     }
 
     .navBar_link {
-        font-size: .5rem;
+        font-size: .43rem;
         margin-right: .25rem;
 
         &:last-child {
@@ -233,4 +293,6 @@
         font-size: .5rem;
         padding: .5rem
     }
+
+
 }

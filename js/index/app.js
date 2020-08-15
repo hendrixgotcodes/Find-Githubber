@@ -27,6 +27,9 @@ const getGithub = new oauth();
 
 searchbox.addEventListener('keyup', (e) => {
 
+    removeNode(previousPage);
+    removeNode(nextPage);
+
     // Testing Network Before Query
     if (!navigator.onLine) {
         console.log(navigator.onLine);
@@ -60,7 +63,7 @@ searchbox.addEventListener('keyup', (e) => {
                     //...display user repo
                     ui.setRepos(data.repos);
 
-                    if(gitReposNav.querySelector("nextPage")===null){
+                    if(gitReposNav.querySelector("#nextPage")===null){
                         gitReposNav.appendChild(nextPage);
                     }
                 }
@@ -103,8 +106,6 @@ searchbox.addEventListener('keyup', (e) => {
 
 
 
-
-
 //Click event to scroll to position of repositories
 window.addEventListener('click', (e)=>{
     if(e.target.className === "focused" || e.target.classList.contains("focus")){
@@ -118,7 +119,14 @@ window.addEventListener('click', (e)=>{
 
     }
 
-    if(e.target.id === "nextPage"){
+
+    //Trigger if nextPage navigator is clicked
+    else if(e.target.id === "nextPage"){
+
+        if(pageNumber < 0){
+            pageNumber = -(pageNumber);
+        }
+
         window.scrollTo({
             top: document.getElementById("rHead").offsetTop,
             left: document.getElementById("rHead").offsetLeft,
@@ -136,7 +144,8 @@ window.addEventListener('click', (e)=>{
        }
     }
 
-    if(e.target.id === "previousPage"){
+    //Trigger if previousPage navigator is clicked
+    else if(e.target.id === "previousPage"){
         if(pageNumber > 0){
             window.scrollTo({
                 top: document.getElementById("rHead").offsetTop,
@@ -154,6 +163,18 @@ window.addEventListener('click', (e)=>{
        
     }
 });
+
+//Function to remove nodes from board
+function removeNode(node){
+
+console.log(gitReposNav);
+
+    if(gitReposNav.querySelector("#"+node.id) !== null){
+        console.log(node);
+        gitReposNav.body.removeChild(node);
+
+    }
+}
 
 //Instantiating UTILL class
 const utill = new UTILL();
