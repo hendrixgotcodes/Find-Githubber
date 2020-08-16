@@ -15,7 +15,7 @@ class UTILL {
 
         this.dark = document.createElement('i');
         // this.dark.classList.add("fas");
-        this.dark.classList.add("fas","fa-moon");
+        this.dark.classList.add("fas", "fa-moon");
 
         // Selecting darkmode themes
         this.theme_text = document.querySelectorAll(".theme--text");
@@ -42,15 +42,14 @@ class UTILL {
     }
 
     //scolls page up
-    scrollUp() {
-        this.go_toTop.addEventListener("click", (e) => {
-            window.scrollTo({
-                top: document.getElementById("top").offsetTop,
-                left: document.getElementById("top").offsetLeft,
-                behavior: "smooth"
-            })
-        });
-    }
+    // scrollUp() {
+    //     window.addEventListener("click", (e) => {
+
+           
+
+    //     });
+
+    // }
 
 
     /********************TOOL TIP ********************************/
@@ -68,36 +67,34 @@ class UTILL {
     }
 
 
-    
-    /******************DarkMode Light Mode Toggler****************/
-    toggleTheme(){
 
-        this.navBarCheckBox.addEventListener("change",(e)=>{
+    /******************DarkMode Light Mode Toggler****************/
+    toggleTheme() {
+
+        this.navBarCheckBox.addEventListener("change", (e) => {
 
             // Switching between icons
-            if(this.toggler.querySelector(".old")){
-                this.toggler.replaceChild(this.dark,this.light);
+            if (this.toggler.querySelector(".old")) {
+                this.toggler.replaceChild(this.dark, this.light);
+            } else if (this.toggler.querySelector(".new")) {
+                this.toggler.replaceChild(this.dark, this.light2);
+            } else {
+                this.toggler.replaceChild(this.light2, this.dark);
             }
-            else if(this.toggler.querySelector(".new")){
-                this.toggler.replaceChild(this.dark,this.light2);
-            }
-            else{
-                this.toggler.replaceChild(this.light2,this.dark);
-            }
-            
+
             this.body.classList.toggle("darkmode--background");
-            this.theme_text.forEach((element)=>{
+            this.theme_text.forEach((element) => {
                 element.classList.toggle("darkmode--text");
             });
 
-            
-            this.theme_border.forEach((element)=>{
+
+            this.theme_border.forEach((element) => {
                 element.classList.toggle("darkmode--border");
             })
         });
 
     }
-   
+
 
 
 

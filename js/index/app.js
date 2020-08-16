@@ -184,6 +184,23 @@ window.addEventListener('click', (e) => {
         }
 
     }
+
+    if (e.target.className === "go-toTop") {
+
+        window.scrollTo({
+            top: document.getElementById("top").offsetTop,
+            left: document.getElementById("top").offsetLeft,
+            behavior: "smooth"
+        })
+
+    }
+    else if(e.target.id = "go_toTop"){
+        window.scrollTo({
+            top: document.getElementById("top").offsetTop,
+            left: document.getElementById("top").offsetLeft,
+            behavior: "smooth"
+        })
+    }
 });
 
 window.addEventListener("resize",()=>{
@@ -217,7 +234,6 @@ const utill = new UTILL();
 
 // calling util methods
 utill.showGoToTop();
-utill.scrollUp();
 utill.toggleTheme();
 
 //Tooltip
