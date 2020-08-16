@@ -203,14 +203,13 @@
 
     .profile_stat {
         width: 100%;
-        flex-direction: row-reverse;
         justify-content: space-between;
         align-items: flex-start;
         padding: 1rem;
         background-color: $primary_color;
         margin-bottom: 1rem;
         border-radius: 4px;
-
+        flex-direction: row-reverse;
     }
 
 
