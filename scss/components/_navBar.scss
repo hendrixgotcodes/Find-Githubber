@@ -12,6 +12,7 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    position: relative;
 }
 
 //Styling h1 text in the navBar which appears as logo
@@ -57,7 +58,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     text-align: center;
     transition: .3s;
 

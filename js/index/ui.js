@@ -259,15 +259,13 @@ class UI {
 
         lastUpdated = parseInt(lastUpdated / 30);
 
-        if(lastUpdated === 1){
+        if (lastUpdated === 1) {
           unit = "month";
-        }
-        else{
+        } else {
           unit = "months";
         }
-        
-      }
-      else if (lastUpdated === 1) {
+
+      } else if (lastUpdated === 1) {
         unit = "day";
       } else {
         unit = "days";
@@ -277,5 +275,78 @@ class UI {
 
     return `${Number.parseInt(lastUpdated)}  ${unit}  ago`;
   }
+
+
+  replaceNavBar() {
+    const navBarContainer = document.querySelector(".navBar_container");
+    const navBar = document.querySelector(".navBar_links");
+    const checkBox = document.createElement("input");
+    checkBox.type = "checkbox";
+    checkBox.className = "harmBurgerMenuCheckbox";
+
+
+    const hamBurgerMenu = document.createElement("div");
+    hamBurgerMenu.className = "harmBurgerMenu";
+
+    if (navBarContainer.querySelector(".navBar_links") !== null) {
+
+      navBarContainer.replaceChild(hamBurgerMenu, navBar);
+      navBarContainer.appendChild(checkBox);
+    }
+
+  }
+
+  replaceNavBarInverse(){
+    const navBarContainer = document.querySelector(".navBar_container");
+    const navBar = document.createElement("div");
+     navBar.innerHTML = 
+     ` <a href="" class="navBar_link theme--text">Home</a>
+     <a href="#" class="navBar_link theme--text">Options</a>
+     <a href="" class="navBar_link theme--text">Docs</a>
+     `;
+
+     navBar.className = "navBar_links";
+
+
+    const hamBurgerMenu = document.querySelector(".harmBurgerMenu");
+    const checkBox = document.querySelector(".harmBurgerMenuCheckbox");
+
+    if (navBarContainer.querySelector(".harmBurgerMenu") !== null) {
+
+
+      navBarContainer.replaceChild(navBar,hamBurgerMenu);
+      navBarContainer.removeChild(checkBox);
+
+    }
+    
+  }
+  
+  addNavBox_links(){
+    
+    const searchBox = this.body.querySelector(".searchBox");
+
+    const navBoxLinks = document.createElement("div");
+    navBoxLinks.className = "navbox_links";
+
+
+    navBoxLinks.innerHTML =
+    `<a href="">Home</a>
+     <a href="">Options</a>
+     <a href="">Docs</a>
+    `;
+
+    if(this.body.querySelector(".navbox_links") ===null){
+      this.body.insertBefore(navBoxLinks,searchBox);
+    }
+
+    else if(this.body.querySelector(".navbox_links") !==null){
+
+    const addedNBL = this.body.querySelector(".navbox_links");
+
+     this.body.removeChild(addedNBL);
+    }
+  }
+
+
 
 }

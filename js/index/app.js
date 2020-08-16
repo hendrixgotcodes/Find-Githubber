@@ -1,5 +1,7 @@
 "use strict";
 
+
+
 // Instantiating UI object
 const ui = new UI();
 //Getting searchbox
@@ -22,13 +24,19 @@ previousPage.className = "pageSwitch";
 previousPage.id = "previousPage";
 
 
+if (window.innerWidth <= 711) {
+    console.log("hi")
+
+    ui.replaceNavBar();
+}
+
 //Creating an instance of the oauth object
 const getGithub = new oauth();
 
 searchbox.addEventListener('keyup', (e) => {
 
-    removeNode(previousPage);
-    removeNode(nextPage);
+    // removeNode(previousPage);
+    // removeNode(nextPage);
 
     // Testing Network Before Query
     if (!navigator.onLine) {
@@ -44,11 +52,11 @@ searchbox.addEventListener('keyup', (e) => {
         userName = e.target.value;
         console.log(userName);
         // ....receive promise from oauth instance
-        getGithub.getUser(e.target.value,1)
+        getGithub.getUser(e.target.value, 1)
             .then((data) => {
 
                 //If promise has a message of null or not found....
-                if (data.profile.message === "Not Found" ) {
+                if (data.profile.message === "Not Found") {
 
                     //..display error message
                     ui.profileNotFound();
@@ -56,14 +64,14 @@ searchbox.addEventListener('keyup', (e) => {
                     //...else display user profile
                     ui.setProfile(data.profile);
 
-                    if(data.repos.length === 0){
+                    if (data.repos.length === 0) {
                         document.querySelector(".repos").innerHTML = "No repos available"
                         return;
                     }
                     //...display user repo
                     ui.setRepos(data.repos);
 
-                    if(gitReposNav.querySelector("#nextPage")===null){
+                    if (gitReposNav.querySelector("#nextPage") === null) {
                         gitReposNav.appendChild(nextPage);
                     }
                 }
@@ -74,7 +82,7 @@ searchbox.addEventListener('keyup', (e) => {
                 console.log(error);
             })
 
-    } 
+    }
     //If textbox is empty.....
     else if (e.target.value === "") {
 
@@ -89,7 +97,7 @@ searchbox.addEventListener('keyup', (e) => {
 
 // document.getElementById("nextPage").addEventListener("click",()=>{
 
-    
+
 //     window.scrollTo({
 //         top: document.getElementById("rHead").offsetTop,
 //         left: document.getElementById("rHead").offsetLeft,
@@ -107,8 +115,8 @@ searchbox.addEventListener('keyup', (e) => {
 
 
 //Click event to scroll to position of repositories
-window.addEventListener('click', (e)=>{
-    if(e.target.className === "focused" || e.target.classList.contains("focus")){
+window.addEventListener('click', (e) => {
+    if (e.target.className === "focused" || e.target.classList.contains("focus")) {
 
 
         window.scrollTo({
@@ -119,11 +127,20 @@ window.addEventListener('click', (e)=>{
 
     }
 
+    else if(e.target.className === "harmBurgerMenuCheckbox"){
+
+        // const checkbox = document.querySelector(".navBar").querySelector(".harmBurgerMenuCheckbox");
+        // checkbox.classList.toggle("harmBurgerMenuCheckbox--added");
+        // console.log(checkbox);
+        
+        ui.addNavBox_links();
+
+    }
 
     //Trigger if nextPage navigator is clicked
-    else if(e.target.id === "nextPage"){
+    else if (e.target.id === "nextPage") {
 
-        if(pageNumber < 0){
+        if (pageNumber < 0) {
             pageNumber = -(pageNumber);
         }
 
@@ -133,43 +150,60 @@ window.addEventListener('click', (e)=>{
             behavior: 'smooth'
         });
 
-       getGithub.getUser(userName,pageNumber)
-       .then((data)=>{
-           ui.setRepos(data.repos);
-           pageNumber++;
-       });
+        getGithub.getUser(userName, pageNumber)
+            .then((data) => {
+                ui.setRepos(data.repos);
+                pageNumber++;
+            });
 
-       if(gitReposNav.querySelector("#previousPage") === null){
-           gitReposNav.appendChild(previousPage);
-       }
+        if (gitReposNav.querySelector("#previousPage") === null) {
+            gitReposNav.appendChild(previousPage);
+        }
     }
 
     //Trigger if previousPage navigator is clicked
-    else if(e.target.id === "previousPage"){
-        if(pageNumber > 0){
+    else if (e.target.id === "previousPage") {
+        if (pageNumber > 0) {
             window.scrollTo({
                 top: document.getElementById("rHead").offsetTop,
                 left: document.getElementById("rHead").offsetLeft,
                 behavior: 'smooth'
             });
-    
-    
-           getGithub.getUser(userName,pageNumber-2)
-           .then((data)=>{
-               ui.setRepos(data.repos);
-               pageNumber--;
-           });
+
+
+            getGithub.getUser(userName, pageNumber - 2)
+                .then((data) => {
+                    ui.setRepos(data.repos);
+                    pageNumber--;
+                });
         }
-       
+
+    }
+    else{
+        console.log(e.target.className)
     }
 });
 
+window.addEventListener("resize",()=>{
+    if (window.innerWidth <= 720) {
+        console.log("hi")
+    
+        ui.replaceNavBar();
+    }
+    else{
+        ui.replaceNavBarInverse();
+    }
+    
+})
+
+
+
 //Function to remove nodes from board
-function removeNode(node){
+function removeNode(node) {
 
-console.log(gitReposNav);
+    console.log(gitReposNav);
 
-    if(gitReposNav.querySelector("#"+node.id) !== null){
+    if (gitReposNav.querySelector("#" + node.id) !== null) {
         console.log(node);
         gitReposNav.body.removeChild(node);
 
@@ -185,13 +219,12 @@ utill.scrollUp();
 utill.toggleTheme();
 
 //Tooltip
-window.addEventListener("mouseenter",(e)=>{
-    if(e.target.className="language"){
+window.addEventListener("mouseenter", (e) => {
+    if (e.target.className = "language") {
         // utill.appendToolTip(e.x,e.y,"Programming language");
         console.clear();
         console.log("here");
-    }
-    else{
+    } else {
         console.clear();
         console.log(e.target.className);
     }
