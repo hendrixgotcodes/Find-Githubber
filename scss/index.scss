@@ -232,37 +232,38 @@
 
 
 }
-.gitRepos_nav{
-    // background-color: red;
-    width: 100%;
-    padding: 2rem;
+
+.gitRepos_nav {
+  // background-color: red;
+  width: 100%;
+  padding: 2rem;
+  color: $primary_color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & .pageSwitch {
+    margin-right: 1.5rem;
+    cursor: pointer;
+    transition: .3s;
+    position: relative;
     color: $primary_color;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-    & .pageSwitch{
-        margin-right: 1.5rem;
-        cursor: pointer;
-        transition: .3s;
-        position: relative;
-        color: $primary_color;
-
-        &:hover{
-            text-decoration: underline;
-        }
-
+    &:hover {
+      text-decoration: underline;
     }
 
-    & #previousPage::after{
-        content: "";
-        height: 100%;
-        width: 3%;
-        position: absolute;
-        left: -13%;
-        top: 0;
-        background-color: $primary_color;
-    }
+  }
+
+  & #previousPage::after {
+    content: "";
+    height: 100%;
+    width: 3%;
+    position: absolute;
+    left: -13%;
+    top: 0;
+    background-color: $primary_color;
+  }
 
 }
 
@@ -275,6 +276,7 @@
   // padding-top: 2rem;
   // border-bottom: 1px solid #eeeeee;
   border-top: 1px solid darken($color: $plain_color, $amount: 18%);
+  word-break: break-all;
 
   &:first-child {
     // border-top: 1px solid #cecece;
