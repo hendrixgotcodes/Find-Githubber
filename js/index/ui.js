@@ -165,7 +165,7 @@ class UI {
   }
 
   nullPasser(nll){
-    if(nll === null){
+    if(nll === null || nll === ""){
       return "Unavailable";
     }
     return nll;

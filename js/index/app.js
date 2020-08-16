@@ -117,7 +117,7 @@ searchbox.addEventListener('keyup', (e) => {
 //Click event to scroll to position of repositories
 window.addEventListener('click', (e) => {
 
-    e.preventDefault();
+    // e.preventDefault();
 
     // if repository count is clicked
     if (e.target.className === "focused" || e.target.classList.contains("focus")) {

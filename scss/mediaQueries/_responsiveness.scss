@@ -192,7 +192,7 @@
         font-size: 1rem;
     }
 
-    .profile_stats{
+    .profile_stats {
         flex-direction: column;
         width: 95%;
         height: fit-content;
@@ -200,9 +200,10 @@
         background-color: unset;
         border-radius: 0;
     }
-    .profile_stat{
+
+    .profile_stat {
         width: 100%;
-        flex-direction: row;
+        flex-direction: row-reverse;
         justify-content: space-between;
         align-items: flex-start;
         padding: 1rem;
@@ -242,12 +243,13 @@
     .gitRepos {
         background-color: unset;
         font-size: 1rem;
+
         h2 {
             font-size: 1.1rem;
         }
     }
 
-    .repo{
+    .repo {
         border-top: none;
         background-color: rgba(0, 0, 0, 0.09);
         margin-bottom: 1rem;
