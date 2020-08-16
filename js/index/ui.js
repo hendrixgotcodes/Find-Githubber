@@ -36,7 +36,7 @@ class UI {
       `
             <div class="profile_picture">
               <img src="${data.avatar_url}" alt="Profile picture" />
-              <a href="${data.html_url}" target="_blank">${this.nullPasser(data.name)}</a>
+              <a href="${data.html_url}" target="_blank">${this.profileNullPasser(data.name)}</a>
             </div>
   
             <div class="profile_details">
@@ -60,9 +60,9 @@ class UI {
               </div>
   
               <div class="profile_descript">
-                <div class="profile_descript_items"><span>Company: ${data.company}</span></div>
-                <div class="profile_descript_items"><a href="${data.blog}" target="_blank">Website/Blog </a></div>
-                <div class="profile_descript_items"><span>Location: ${data.location}</span></div>
+                <div class="profile_descript_items"><span>Company: ${this.nullPasser(data.company)}</span></div>
+                <div class="profile_descript_items"><a href="${this.nullPasser(data.blog)}" target="_blank">Website/Blog </a></div>
+                <div class="profile_descript_items"><span>Location: ${this.nullPasser(data.location)}</span></div>
                 <div class="profile_descript_items"><span>Joined: ${this.getTime(data.created_at)}</span></div>
               </div>
             </div>
@@ -104,13 +104,13 @@ class UI {
       reposInnerHtml +=
         `<div class="repo">
       <a class="repo_title" target="_blank" href="${repo.html_url}">${repo.name}</a>
-      <p class="repo_description">${repo.description}</p>
+      <p class="repo_description">${this.nullPasser(repo.description)}</p>
   
       <span class="update"><span class="repo_time">Last Updated At: </span>${this.getTime(repo.updated_at)}</span>
       <div class="repo_awards">
         
         <span id="language" class="language repo_award">
-        <i class="fas fa-wrench"></i>:  <span>${repo.language}</span>
+        <i class="fas fa-wrench"></i>:  <span>${this.nullPasser(repo.language)}</span>
         </span>
 
         <span class="stars repo_award">
@@ -157,9 +157,16 @@ class UI {
 
 
   // Function which replaces null with visit profile
-  nullPasser(nll) {
+  profileNullPasser(nll) {
     if (nll === null) {
       return "Visit Profile";
+    }
+    return nll;
+  }
+
+  nullPasser(nll){
+    if(nll === null){
+      return "Unavailable";
     }
     return nll;
   }
@@ -229,18 +236,23 @@ class UI {
   }
 
   getTime(date) {
-
+    // Date taken as argument
     let firstDay = new Date(date);
+
+    // Current Date
     let today = new Date();
+
+    //Time Unit
     let unit = ""
 
-    let lastUpdated = today - firstDay;
+    //Finding difference between dates
+    let lastUpdated = today.getTime() - firstDay.getTime();
 
+    // Converting date into days
     lastUpdated = lastUpdated / (1000 * 3600 * 24);
 
-    // console.clear();                   
 
-    console.log(`lastUpdated: ${lastUpdated}`);
+
 
     if (lastUpdated > 365) {
 
@@ -252,10 +264,8 @@ class UI {
       } else {
         unit = "year";
       }
-    } else {
-
-
-      if (lastUpdated > 30) {
+    } 
+    else if (lastUpdated > 30 && lastUpdated < 365 && lastUpdated >= 1) {
 
         lastUpdated = parseInt(lastUpdated / 30);
 
@@ -265,15 +275,32 @@ class UI {
           unit = "months";
         }
 
-      } else if (lastUpdated === 1) {
+    } 
+    else if (lastUpdated === 1 ) {
         unit = "day";
-      } else {
+    } 
+    else if(lastUpdated < 1){
+      lastUpdated = lastUpdated * 24;
+      
+      unit = "hours";
+      console.log(`LAST UPDATED: ${lastUpdated}`);
+    }
+    else {
         unit = "days";
       }
-    }
-    console.log(parseInt(lastUpdated));
+  
 
     return `${Number.parseInt(lastUpdated)}  ${unit}  ago`;
+  }
+
+  splitDecimal(decimal){
+
+    decimal = decimal.toString();
+
+    let splittedDecimal = decimal.split(".");
+
+    return splittedDecimal;
+
   }
 
 

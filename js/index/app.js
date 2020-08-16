@@ -116,6 +116,10 @@ searchbox.addEventListener('keyup', (e) => {
 
 //Click event to scroll to position of repositories
 window.addEventListener('click', (e) => {
+
+    e.preventDefault();
+
+    // if repository count is clicked
     if (e.target.className === "focused" || e.target.classList.contains("focus")) {
 
 
@@ -127,6 +131,7 @@ window.addEventListener('click', (e) => {
 
     }
 
+    // If harmburger menu is clicked
     else if(e.target.className === "harmBurgerMenuCheckbox"){
 
         // const checkbox = document.querySelector(".navBar").querySelector(".harmBurgerMenuCheckbox");
@@ -179,9 +184,6 @@ window.addEventListener('click', (e) => {
         }
 
     }
-    else{
-        console.log(e.target.className)
-    }
 });
 
 window.addEventListener("resize",()=>{
@@ -198,7 +200,7 @@ window.addEventListener("resize",()=>{
 
 
 
-//Function to remove nodes from board
+//Function to remove nodes from DOM
 function removeNode(node) {
 
     console.log(gitReposNav);
