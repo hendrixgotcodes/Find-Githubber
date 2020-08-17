@@ -132,14 +132,23 @@ window.addEventListener('click', (e) => {
     }
 
     // If harmburger menu is clicked
-    else if(e.target.className === "harmBurgerMenuCheckbox"){
+    else if (e.target.className === "harmBurgerMenuCheckbox") {
 
         // const checkbox = document.querySelector(".navBar").querySelector(".harmBurgerMenuCheckbox");
         // checkbox.classList.toggle("harmBurgerMenuCheckbox--added");
         // console.log(checkbox);
-        
+
         ui.addNavBox_links();
 
+        const harmBurgerMenu = document.querySelector(".harmBurgerMenu");
+        const navBoxLinks = document.querySelector(".navbox_links");
+
+        harmBurgerMenu.classList.toggle("harmBurgerMenu_checked");
+
+        setTimeout(() => {
+            navBoxLinks.classList.toggle("navbox_links--shown");
+
+        }, 300)
     }
 
     //Trigger if nextPage navigator is clicked
@@ -193,8 +202,7 @@ window.addEventListener('click', (e) => {
             behavior: "smooth"
         })
 
-    }
-    else if(e.target.id = "go_toTop"){
+    } else if (e.target.id = "go_toTop") {
         window.scrollTo({
             top: document.getElementById("top").offsetTop,
             left: document.getElementById("top").offsetLeft,
@@ -203,16 +211,15 @@ window.addEventListener('click', (e) => {
     }
 });
 
-window.addEventListener("resize",()=>{
+window.addEventListener("resize", () => {
     if (window.innerWidth <= 720) {
         console.log("hi")
-    
+
         ui.replaceNavBar();
-    }
-    else{
+    } else {
         ui.replaceNavBarInverse();
     }
-    
+
 })
 
 

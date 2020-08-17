@@ -3,8 +3,9 @@
     height: .1rem;
     background-color: $plain_color;
     position: relative;
+    transition: .3s;
 
-    &::before{
+    &::before {
         content: "";
         width: 100%;
         height: 100%;
@@ -12,25 +13,37 @@
         position: absolute;
         top: -.4rem;
         left: 0;
+
     }
 
-    &::after{
+    &::after {
         content: "";
         width: 100%;
         height: 100%;
         background-color: $plain_color;
         position: absolute;
         top: .4rem;
-        left: 0;
+        left: 0%;
+
     }
 }
 
-.harmBurgerMenuCheckbox{
-    position: absolute;
-    right: 5%;
-    width: 5%;
-    opacity: 0;
+.harmBurgerMenu_checked{
+    transform: rotate(135deg);
 
-    
+    &::before{
+        top: 10%;
+        transform: rotate(90deg);
+    }
+    &::after{
+        top: 0;
+    }
 }
 
+.harmBurgerMenuCheckbox {
+    position: absolute;
+    right: 2%;
+    width: 5%;
+    opacity: 0;
+    cursor: pointer;
+}

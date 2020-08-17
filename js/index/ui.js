@@ -364,6 +364,7 @@ class UI {
 
     if(this.body.querySelector(".navbox_links") ===null){
       this.body.insertBefore(navBoxLinks,searchBox);
+
     }
 
     else if(this.body.querySelector(".navbox_links") !==null){
@@ -372,6 +373,8 @@ class UI {
 
      this.body.removeChild(addedNBL);
     }
+
+
   }
 
 

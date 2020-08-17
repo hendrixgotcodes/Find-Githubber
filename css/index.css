@@ -140,8 +140,8 @@ body {
 .img {
   position: relative;
   top: 21%;
-  width: 25%;
-  height: 25%;
+  width: 30%;
+  height: 30%;
   margin: 6.3% auto; }
 
 .profile {
@@ -450,7 +450,8 @@ body {
   width: 5%;
   height: .1rem;
   background-color: #ffffff;
-  position: relative; }
+  position: relative;
+  transition: .3s; }
   .harmBurgerMenu::before {
     content: "";
     width: 100%;
@@ -466,13 +467,22 @@ body {
     background-color: #ffffff;
     position: absolute;
     top: .4rem;
-    left: 0; }
+    left: 0%; }
+
+.harmBurgerMenu_checked {
+  transform: rotate(135deg); }
+  .harmBurgerMenu_checked::before {
+    top: 10%;
+    transform: rotate(90deg); }
+  .harmBurgerMenu_checked::after {
+    top: 0; }
 
 .harmBurgerMenuCheckbox {
   position: absolute;
-  right: 5%;
+  right: 2%;
   width: 5%;
-  opacity: 0; }
+  opacity: 0;
+  cursor: pointer; }
 
 .navbox_links {
   display: flex;
@@ -484,9 +494,7 @@ body {
     font-size: 1rem;
     transition: color .3s ease;
     margin-right: 1rem;
-    padding-bottom: 1rem;
-    display: block;
-    transition: .3s; }
+    padding-bottom: 1rem; }
 
 @media only screen and (max-width: 1150px) {
   .navBar_link {
@@ -564,6 +572,8 @@ body {
   .textBox {
     font-size: .83rem;
     padding: .5rem; }
+  .profile_container .img {
+    width: 35%; }
   .profile {
     flex-direction: column;
     height: fit-content; }
