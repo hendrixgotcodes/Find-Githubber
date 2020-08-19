@@ -141,14 +141,7 @@ window.addEventListener('click', (e) => {
         ui.addNavBox_links();
 
         const harmBurgerMenu = document.querySelector(".harmBurgerMenu");
-        const navBoxLinks = document.querySelector(".navbox_links");
-
-        harmBurgerMenu.classList.toggle("harmBurgerMenu_checked");
-
-        setTimeout(() => {
-            navBoxLinks.classList.toggle("navbox_links--shown");
-
-        }, 300)
+        
     }
 
     //Trigger if nextPage navigator is clicked

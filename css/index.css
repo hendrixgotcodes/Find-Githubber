@@ -487,14 +487,19 @@ body {
 .navbox_links {
   display: flex;
   flex-direction: column;
-  transition: .3s; }
+  transition: .3s;
+  width: 0; }
   .navbox_links a {
     text-decoration: none;
     color: #242582;
     font-size: 1rem;
-    transition: color .3s ease;
+    transition: .3s ease;
     margin-right: 1rem;
-    padding-bottom: 1rem; }
+    padding-bottom: 1rem;
+    opacity: 0; }
+
+.navbox_links--shown a {
+  color: red; }
 
 @media only screen and (max-width: 1150px) {
   .navBar_link {

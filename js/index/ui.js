@@ -164,8 +164,8 @@ class UI {
     return nll;
   }
 
-  nullPasser(nll){
-    if(nll === null || nll === ""){
+  nullPasser(nll) {
+    if (nll === null || nll === "") {
       return "Unavailable";
     }
     return nll;
@@ -264,36 +264,32 @@ class UI {
       } else {
         unit = "year";
       }
-    } 
-    else if (lastUpdated > 30 && lastUpdated < 365 && lastUpdated >= 1) {
+    } else if (lastUpdated > 30 && lastUpdated < 365 && lastUpdated >= 1) {
 
-        lastUpdated = parseInt(lastUpdated / 30);
+      lastUpdated = parseInt(lastUpdated / 30);
 
-        if (lastUpdated === 1) {
-          unit = "month";
-        } else {
-          unit = "months";
-        }
+      if (lastUpdated === 1) {
+        unit = "month";
+      } else {
+        unit = "months";
+      }
 
-    } 
-    else if (lastUpdated === 1 ) {
-        unit = "day";
-    } 
-    else if(lastUpdated < 1){
+    } else if (lastUpdated === 1) {
+      unit = "day";
+    } else if (lastUpdated < 1) {
       lastUpdated = lastUpdated * 24;
-      
+
       unit = "hours";
       console.log(`LAST UPDATED: ${lastUpdated}`);
+    } else {
+      unit = "days";
     }
-    else {
-        unit = "days";
-      }
-  
+
 
     return `${Number.parseInt(lastUpdated)}  ${unit}  ago`;
   }
 
-  splitDecimal(decimal){
+  splitDecimal(decimal) {
 
     decimal = decimal.toString();
 
@@ -323,16 +319,16 @@ class UI {
 
   }
 
-  replaceNavBarInverse(){
+  replaceNavBarInverse() {
     const navBarContainer = document.querySelector(".navBar_container");
     const navBar = document.createElement("div");
-     navBar.innerHTML = 
-     ` <a href="" class="navBar_link theme--text">Home</a>
+    navBar.innerHTML =
+      ` <a href="" class="navBar_link theme--text">Home</a>
      <a href="#" class="navBar_link theme--text">Options</a>
      <a href="" class="navBar_link theme--text">Docs</a>
      `;
 
-     navBar.className = "navBar_links";
+    navBar.className = "navBar_links";
 
 
     const hamBurgerMenu = document.querySelector(".harmBurgerMenu");
@@ -341,15 +337,15 @@ class UI {
     if (navBarContainer.querySelector(".harmBurgerMenu") !== null) {
 
 
-      navBarContainer.replaceChild(navBar,hamBurgerMenu);
+      navBarContainer.replaceChild(navBar, hamBurgerMenu);
       navBarContainer.removeChild(checkBox);
 
     }
-    
+
   }
-  
-  addNavBox_links(){
-    
+
+  addNavBox_links() {
+
     const searchBox = this.body.querySelector(".searchBox");
 
     const navBoxLinks = document.createElement("div");
@@ -357,22 +353,42 @@ class UI {
 
 
     navBoxLinks.innerHTML =
-    `<a href="">Home</a>
+      `<a href="">Home</a>
      <a href="">Options</a>
      <a href="">Docs</a>
     `;
 
-    if(this.body.querySelector(".navbox_links") ===null){
-      this.body.insertBefore(navBoxLinks,searchBox);
+    if (this.body.querySelector(".navbox_links") === null) {
+      this.body.insertBefore(navBoxLinks, searchBox);
 
+    } else if (this.body.querySelector(".navbox_links") !== null) {
+
+      const addedNBL = this.body.querySelector(".navbox_links");
+
+      this.body.removeChild(addedNBL);
     }
 
-    else if(this.body.querySelector(".navbox_links") !==null){
+    console.log(navBoxLinks);
 
-    const addedNBL = this.body.querySelector(".navbox_links");
+      const links = navBoxLinks.querySelectorAll("a");
 
-     this.body.removeChild(addedNBL);
-    }
+      console.log(links)
+
+      links.forEach((link)=>{
+        link.animate([
+          {opacity: 1},
+          {color: "red"}
+          // {opacity: 0},
+        ],
+        {
+          duration: 1000,
+          "fill": "forwards",
+        }
+          )
+      })
+    
+     
+
 
 
   }
