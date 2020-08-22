@@ -11,4 +11,4 @@ Yep! Its as simple as that.
 ## How It Works
 <br>
 **Find Githubber** makes use of a Fetch API (which can instantiated using the windows.fetch object).
-A GET request is made through the Fetch API to the [Github API](https://docs.github.com/en/rest) 
+A GET request is made through the Fetch API to the [Github API](https://docs.github.com/en/rest/) 
