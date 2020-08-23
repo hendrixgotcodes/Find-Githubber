@@ -368,28 +368,6 @@ class UI {
       this.body.removeChild(addedNBL);
     }
 
-    console.log(navBoxLinks);
-
-      const links = navBoxLinks.querySelectorAll("a");
-
-      console.log(links)
-
-      links.forEach((link)=>{
-        link.animate([
-          {opacity: 1},
-          {color: "red"}
-          // {opacity: 0},
-        ],
-        {
-          duration: 1000,
-          "fill": "forwards",
-        }
-          )
-      })
-    
-     
-
-
 
   }
 

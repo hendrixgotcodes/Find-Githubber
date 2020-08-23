@@ -117,8 +117,6 @@ searchbox.addEventListener('keyup', (e) => {
 //Click event to scroll to position of repositories
 window.addEventListener('click', (e) => {
 
-    // e.preventDefault();
-
     // if repository count is clicked
     if (e.target.className === "focused" || e.target.classList.contains("focus")) {
 
@@ -134,14 +132,11 @@ window.addEventListener('click', (e) => {
     // If harmburger menu is clicked
     else if (e.target.className === "harmBurgerMenuCheckbox") {
 
-        // const checkbox = document.querySelector(".navBar").querySelector(".harmBurgerMenuCheckbox");
-        // checkbox.classList.toggle("harmBurgerMenuCheckbox--added");
-        // console.log(checkbox);
-
         ui.addNavBox_links();
 
         const harmBurgerMenu = document.querySelector(".harmBurgerMenu");
-        
+        harmBurgerMenu.classList.toggle("harmBurgerMenu_checked");
+
     }
 
     //Trigger if nextPage navigator is clicked
@@ -185,13 +180,9 @@ window.addEventListener('click', (e) => {
                 });
         }
 
-    }
-
-    else if (e.target.classList.contains("go-toTop") || e.target.id === "go_toTop") {
+    } else if (e.target.classList.contains("go-toTop") || e.target.id === "go_toTop") {
 
         e.preventDefault();
-
-        alert("Bug found");
 
         window.scrollTo({
             top: document.getElementById("top").offsetTop,
@@ -200,7 +191,7 @@ window.addEventListener('click', (e) => {
         })
 
     }
-    
+
 });
 
 window.addEventListener("resize", () => {
