@@ -191,6 +191,8 @@ window.addEventListener('click', (e) => {
 
         e.preventDefault();
 
+        alert("Bug found");
+
         window.scrollTo({
             top: document.getElementById("top").offsetTop,
             left: document.getElementById("top").offsetLeft,
