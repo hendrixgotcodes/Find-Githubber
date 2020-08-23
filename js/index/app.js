@@ -139,7 +139,7 @@ window.addEventListener('click', (e) => {
 
     }
 
-    //Trigger if nextPage navigator is clicked
+    //If nextPage navigator is clicked
     else if (e.target.id === "nextPage") {
 
         if (pageNumber < 0) {
@@ -179,16 +179,6 @@ window.addEventListener('click', (e) => {
                     pageNumber--;
                 });
         }
-
-    } else if (e.target.classList.contains("go-toTop") || e.target.id === "go_toTop") {
-
-        e.preventDefault();
-
-        window.scrollTo({
-            top: document.getElementById("top").offsetTop,
-            left: document.getElementById("top").offsetLeft,
-            behavior: "smooth"
-        })
 
     }
 
@@ -241,3 +231,26 @@ window.addEventListener("mouseenter", (e) => {
 // const language = document.getElementById("language");
 // language.addEventListener("mouseenter", utill.appendToolTip);
 // language.addEventListener("mouseleave",utill.removeToolTip);
+
+
+//Appending Event Listener to scroll
+const scrollUp = document.getElementById("scrollUp");
+
+scrollUp.addEventListener("click",(e)=>{
+    e.preventDefault();
+
+    window.scrollTo({
+        top: document.getElementById("top").offsetTop,
+        left: document.getElementById("top").offsetLeft,
+        behavior: "smooth"
+    });
+})
+
+
+console.log(scrollUp);
+
+// else if (e.target.classList.contains("go-toTop") || e.target.id === "go_toTop") {
+
+
+
+// }

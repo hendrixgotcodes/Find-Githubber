@@ -70,8 +70,10 @@ class UI {
 
     this.profile.innerHTML = innerObject;
 
+    //If user profile is added
     if (this.profile_container.querySelector('.profile') === null) {
 
+      //Remove alert message
       this.clearAlert("infoAlertShown");
 
       this.profile_container.innerHTML = "";
@@ -130,12 +132,6 @@ class UI {
 
 
     this.reposDOM.innerHTML = reposInnerHtml;
-
-
-    // if(this.reposDOM.innerHTML === ""){
-    //   this.reposDOM.innerHTML === "No repositories available for this user";
-    // }
-
 
 
 
