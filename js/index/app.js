@@ -187,7 +187,7 @@ window.addEventListener('click', (e) => {
 
     }
 
-    if (e.target.className === "go-toTop") {
+    else if (e.target.classList.contains("go-toTop") || e.target.id === "go_toTop") {
 
         window.scrollTo({
             top: document.getElementById("top").offsetTop,
@@ -195,13 +195,8 @@ window.addEventListener('click', (e) => {
             behavior: "smooth"
         })
 
-    } else if (e.target.id = "go_toTop") {
-        window.scrollTo({
-            top: document.getElementById("top").offsetTop,
-            left: document.getElementById("top").offsetLeft,
-            behavior: "smooth"
-        })
     }
+    
 });
 
 window.addEventListener("resize", () => {
