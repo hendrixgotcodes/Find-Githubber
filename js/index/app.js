@@ -189,6 +189,8 @@ window.addEventListener('click', (e) => {
 
     else if (e.target.classList.contains("go-toTop") || e.target.id === "go_toTop") {
 
+        e.preventDefault();
+
         window.scrollTo({
             top: document.getElementById("top").offsetTop,
             left: document.getElementById("top").offsetLeft,
