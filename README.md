@@ -6,15 +6,15 @@
 To use this online app;
 - [Visit Find Githubber](https://hendrixgotcodes.github.io/Find-Githubber/)
 - Type in the username of the account you want to see
-Yep! Its as simple as that.
+Yep! Its as simple as that. 
+
+## Version 1.01
+- Ability to search for github users
+- Easy page navigation
 
 ## How It Works
 **Find Githubber** makes use of a Fetch API (which can instantiated using the windows.fetch object).
-A GET request is made through the Fetch API to the [Github API](https://docs.github.com/en/rest/) 
-
-## `Version 1.01`
-- Ability to search for github users
-- Easy page navigation
+A GET request is made through the Fetch API to the [Github API](https://docs.github.com/en/rest/)
 
 ### About The Dev
 [Instagram](https://www.instagram.com/nolimith3ndrix)
