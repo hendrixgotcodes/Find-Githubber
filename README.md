@@ -12,6 +12,10 @@ Yep! Its as simple as that.
 **Find Githubber** makes use of a Fetch API (which can instantiated using the windows.fetch object).
 A GET request is made through the Fetch API to the [Github API](https://docs.github.com/en/rest/) 
 
+## `Version 1.01`
+- Ability to search for github users
+- Easy page navigation
+
 ### About The Dev
 [Instagram](https://www.instagram.com/nolimith3ndrix)
 <br>
