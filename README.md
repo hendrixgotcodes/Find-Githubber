@@ -10,7 +10,8 @@ Yep! Its as simple as that.
 
 ## Version 1.01
 - Ability to search for github users
-- Easy page navigation
+- Easy pagination
+- Smooth scroll
 
 ## How It Works
 **Find Githubber** makes use of a Fetch API (which can instantiated using the windows.fetch object).
