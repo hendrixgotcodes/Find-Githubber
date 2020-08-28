@@ -276,7 +276,6 @@ class UI {
       lastUpdated = lastUpdated * 24;
 
       unit = "hours";
-      console.log(`LAST UPDATED: ${lastUpdated}`);
     } else {
       unit = "days";
     }

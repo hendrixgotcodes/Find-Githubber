@@ -186,8 +186,6 @@ window.addEventListener('click', (e) => {
 
 window.addEventListener("resize", () => {
     if (window.innerWidth <= 720) {
-        console.log("hi")
-
         ui.replaceNavBar();
     } else {
         ui.replaceNavBarInverse();
@@ -245,18 +243,3 @@ scrollUp.addEventListener("click",(e)=>{
         behavior: "smooth"
     });
 })
-
-
-scrollUp.addEventListener("auxclick",(e)=>{
-    window.scrollTo({
-        top: document.getElementById("top").offsetTop,
-        left: document.getElementById("top").offsetLeft,
-        behavior: "smooth"
-    });
-})
-
-// else if (e.target.classList.contains("go-toTop") || e.target.id === "go_toTop") {
-
-
-
-// }
